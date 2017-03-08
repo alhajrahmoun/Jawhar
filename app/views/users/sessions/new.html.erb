@@ -1,0 +1,19 @@
+   <section class="signUp">
+   <div class="container">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'col s12'}) do |f| %>
+        <div class="row">
+            <div class="col s6 pull-s3">
+                <div class="input-field">
+                   <%= f.input :email, label: 'البريد الالكتروني', class: 'validate' %>
+                </div>
+                <div class="input-field">
+                   <%= f.input :password, label: 'كلمة المرور', class: 'validate' %>
+                </div>
+                <div class="input-field">
+                   <%= f.button :submit, "دخول", class: 'waves-effect waves-light btn-large' %>
+                </div>
+            </div>
+        </div>
+         <% end %>
+   </div>
+   </section>

@@ -3,12 +3,49 @@
   <head>
     <title>Jawhar</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'%>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Cairo'%>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <nav>
+<div class="nav-wrapper">
+  <a href="#!" class="brand-logo">جوهر</a>
+  <ul class="right hide-on-med-and-down" id="nav-mobile">
+        <%= render 'layouts/navbar'%>
+  </ul>
+  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="zmdi zmdi-menu"></i></a>
+  <ul class="side-nav" id="mobile-demo">
+        <%= render 'layouts/navbar'%>
+  </ul>
+  <div class="search">
+      <a href="#">
+          <i class="zmdi zmdi-search"></i>
+      </a>
+  </div>
+</div>
+</nav>
+<div class="box-search">
+<div class="container">
+   <div class="close">
+       <i class="zmdi zmdi-close"></i>
+   </div>
+    <form class="box-form" method="get">
+       <div class="input-field">
+        <input type="text" placeholder="إبحث ..">
+       </div>
+       <div class="input-field">
+        <input class="waves-effect waves-light btn-large" type="submit" value="إبحث">
+       </div>
+    </form>
+</div>
+</div>
     <%= yield %>
   </body>
+  <footer>
+    <p><%= t('views.copyrights')%></p>
+</footer>
 </html>
