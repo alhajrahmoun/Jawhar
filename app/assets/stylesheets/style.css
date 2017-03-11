@@ -367,7 +367,7 @@ section#creators .creator2 h5 {
 }
 /* Footer */
 footer {
-    margin-top: 10px;
+    margin-top: 50px;
     padding: 20px;
     background: #DC3522;
 }
@@ -375,7 +375,7 @@ footer p {
     text-align: center;
     color: #D9CB9E;
     font-family: 'Cairo', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.0rem;
 }
 
 /*

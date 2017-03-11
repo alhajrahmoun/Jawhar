@@ -21,9 +21,23 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-        <%= f.input :email, label: "البريد الالكتروني", class: 'validate' %>
+          <%= f.input :email, label: "البريد الالكتروني", class: 'validate' %>
         </div>
       </div>
+
+      <div class="row">
+        <div class="file-field input-field">
+          <div class="btn" style="float: right; margin-left: 10px">
+              <span>الصورة الشخصية</span>
+              <%= f.file_field :avatar%>
+          </div>
+          <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+          </div>
+        </div>
+      </div>
+
+      
       <div class="signUp-submit">
          <div class="col s12">
          <%= f.button :submit, "تسجيل", class: 'btn waves-effect waves-light' %>

@@ -3,6 +3,7 @@
   <head>
     <title>Jawhar</title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css'%>
     <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Cairo'%>
@@ -13,7 +14,7 @@
   <body>
   <nav>
 <div class="nav-wrapper">
-  <a href="#!" class="brand-logo">جوهر</a>
+  <%= link_to "جوهر", root_path, class: 'brand-logo'%>
   <ul class="right hide-on-med-and-down" id="nav-mobile">
         <%= render 'layouts/navbar'%>
   </ul>
