@@ -12,5 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require codemirror
  *= require_style
  */
+
+.CodeMirror {
+	direction: ltr;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+<%= form_for @gist do |f|%>
+	<p>جوهرة</p>
+	<%= f.text_field :title %>
+	<%= f.text_area :description %>
+
+	<div id="snippets">
+	<%= f.fields_for :snippets do |snippet| %>
+		<%= render "snippet_fields", f: snippet %>
+	<% end %>
+	</div>
+
+	<div class="links">
+		<%= link_to_add_association 'أضف ملفاً', f, :snippets %>
+	</div>
+	
+	<%= f.submit %>
+<% end %>
+</div>

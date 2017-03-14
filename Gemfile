@@ -39,6 +39,8 @@ gem 'ahoy_matey'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'cocoon'
+gem 'codemirror-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

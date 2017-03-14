@@ -12,5 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
+//= require codemirror
 //= require ahoy
 //= require_tree .
+
+$(document).ready(function() {
+    $("#owner a.add_fields").
+      data("association-insertion-method", 'after').
+      data("association-insertion-node", 'this');
+
+      $('.snippets').each(function() {
+         var editor = CodeMirror.fromTextArea(this, {
+             lineNumbers : true,
+             matchBrackets : true
+            // mode: $('#snippet_mode').data('mode')
+         });
+     });
+});
+
+

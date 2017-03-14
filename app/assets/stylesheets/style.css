@@ -383,6 +383,10 @@ footer p {
 ******* All Gists Page Style *****
 **********************************
 */
+.coder-link {
+    padding: 9px;
+    border-left: 4px solid #DC3522;
+}
 section#gists {
     margin-top: 100px;
 }

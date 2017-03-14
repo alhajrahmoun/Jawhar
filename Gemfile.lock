@@ -72,6 +72,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    cocoon (1.2.9)
     codemirror-rails (5.16.0)
       railties (>= 3.0, < 6.0)
     coderay (1.1.1)
@@ -266,6 +267,8 @@ DEPENDENCIES
   bullet
   byebug
   carrierwave (~> 1.0)
+  cocoon
+  codemirror-rails
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)

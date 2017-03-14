@@ -6,18 +6,18 @@
                    <div class="last-gists">
                        <div class="last-gist">
                            <h5 class="last-gist-title">
-                               <a href="#">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</a>
+                               <%= link_to gist.title, gist_path(gist) %>
                            </h5>
                            <div class="comment-files-count">
                                <i class="zmdi zmdi-comments">0</i>
-                               <i class="zmdi zmdi-file">0</i>
+                               <i class="zmdi zmdi-file"><%= gist.snippets.count %></i>
                            </div>
                            <div class="tags">
                                <div class="tag">
-                                   <a href="#">javascript</a>
+                                   <a href="#">label1</a>
                                </div>
                                <div class="tag">
-                                   <a href="#">jQuery</a>
+                                   <a href="#">label2</a>
                                </div>
                            </div>
                        </div>
@@ -27,40 +27,52 @@
                     <div class="gist">
                         <div class="gist-head">
                            <div class="heading">
-                                 <h5>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h5>
+                                 <h5><%= gist.title %></h5>
                                 <span class="edit-times"><a href="#">0</a></span>
                            </div>
                             <div class="gist-tools">
-                                <a class="edit" href="#"><i class="zmdi zmdi-edit"></i></a>
+                              <%= link_to edit_gist_path(gist), class: 'edit' do %>
+                                <i class="zmdi zmdi-edit"></i>
+                              <% end %>
+                                
                                 <a class="link" href="#"><i class="zmdi zmdi-link"></i></a>
                                 <a class="share" href="#"><i class="zmdi zmdi-share"></i></a>
                             </div>
                             <div class="coder-link">
                                 صاحب الجوهر :
-                                <a href="#">Amr Arnous</a>
-                            </div>
+                                <a href="#"><%= owner(gist)%></a>
+                             </div>
+                             <div class="coder-link" style="border-left: none">
+                                منذ <%= time_ago_in_words(gist.created_at) %>
+                             </div>
                         </div>
                         <div class="files">
+                          <% gist.snippets.each do |snippet| %>
                             <div class="file" style="direction: ltr">
-                               <!--   text_area_tag 'snippet', @gist.snippets.first.code, class: 'snippets'%>  -->                            
-                            </div>
+                              <%= text_field_tag 'file', snippet.name, readonly: true %>
+                              <%= text_area_tag 'snippet', snippet.code, class: 'snippets'%>  
+                            </div> 
+                          <% end %>
+
                         </div>
                         <div class="comments">
-                           <div class="comment">
+                        <% gist.comments.each do |comment| %>
+                          <div class="comment">
                                 <div class="user-img">
-                                    <img src="img/amr.jpg" width="100" height="100">
+                                    <%= image_tag comment.user.avatar, width: 100, height: 100%>
                                     <div class="comment-contain">
                                         <div class="comment-head">
-                                            <h4>علق <span>عمرو عرنوس</span> منذ 3 دقائق</h4>
+                                            <h4>علق <span><%= owner(comment) %></span> منذ <%= time_ago_in_words(comment.created_at) %></h4>
                                         </div>
                                         <div class="comment-content">
                                             <p>
-                                                هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+                                                <%= comment.content %>
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        <% end %>
                         </div>
                     </div>
                 </div>  
