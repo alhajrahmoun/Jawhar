@@ -1,4 +1,4 @@
-<%= render 'gists', gists: @gists, gist: @gists.first %>
+<%= render 'gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
 
 <script type="text/javascript">
   $('.snippets').each(function() {

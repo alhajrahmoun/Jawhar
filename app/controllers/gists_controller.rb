@@ -1,7 +1,7 @@
 class GistsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :find_gist, only: [:show, :edit]
-  before_filter :find_gists, only: [:show, :index]
+  before_action :find_gist, only: [:show, :edit]
+  before_action :find_gists, only: [:show, :index]
   def index
   end
 
@@ -35,7 +35,7 @@ class GistsController < ApplicationController
 
   private
   def gist_params
-    params.require(:gist).permit(:title, :description, snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
+    params.require(:gist).permit(:title, :description, :tag_list, snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
   end
 
   def find_gist

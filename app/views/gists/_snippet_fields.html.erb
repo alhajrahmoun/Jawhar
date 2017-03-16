@@ -1,5 +1,5 @@
 <div class="nested-fields">
-	<%= f.text_field :name %>
+	<%= f.text_field :name, placeholder: 'اسم الملف' %>
 
 	<%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
 

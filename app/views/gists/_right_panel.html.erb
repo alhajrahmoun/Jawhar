@@ -1,4 +1,20 @@
+                      <% if gist.id == active %>
+                      <div id="active">
                        <div class="last-gist">
+                           <h5 class="last-gist-title">
+                               <%= link_to gist.title, gist_path(gist), remote: true %>
+                           </h5>
+                           <div class="comment-files-count">
+                               <i class="zmdi zmdi-comments">0</i>
+                               <i class="zmdi zmdi-file"><%= gist.snippets.count %></i>
+                           </div>
+                           <div class="tags">
+                              <%= render gist.tags %>
+                           </div>
+                       </div>
+                       </div>
+                       <% else %>
+                        <div class="last-gist">
                            <h5 class="last-gist-title">
                                <%= link_to gist.title, gist_path(gist), remote: true %>
                            </h5>
@@ -15,3 +31,8 @@
                                </div>
                            </div>
                        </div>
+                       <% end %>
+
+                      <script type="text/javascript">
+                      $('.last-gists').scrollTo('#active');
+                      </script>
