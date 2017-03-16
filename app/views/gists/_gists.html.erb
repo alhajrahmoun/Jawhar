@@ -1,0 +1,21 @@
+<% @gists = gists %>
+<div class="row">
+    <section class="gists col l12 s12" id="gists">
+        <div class="container" style="width: 95%">
+            <div class="row">
+                <div class="col l3 m4 s11">
+                   <div class="last-gists">
+                      <%= render partial: 'right_panel', collection: @gists, as: :gist %>
+                   </div>
+                </div> 
+                <div class="col l8 m8 s12">
+                  <div class="gist">
+                  <%= render 'gist', gist: gist %>
+                   </div>
+                </div>
+                  </div>
+                </div>  
+            </div>
+        </div>
+    </section>
+</div>

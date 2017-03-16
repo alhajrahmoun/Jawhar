@@ -1,0 +1,17 @@
+                       <div class="last-gist">
+                           <h5 class="last-gist-title">
+                               <%= link_to gist.title, gist_path(gist), remote: true %>
+                           </h5>
+                           <div class="comment-files-count">
+                               <i class="zmdi zmdi-comments">0</i>
+                               <i class="zmdi zmdi-file"><%= gist.snippets.count %></i>
+                           </div>
+                           <div class="tags">
+                               <div class="tag">
+                                   <a href="#">label1</a>
+                               </div>
+                               <div class="tag">
+                                   <a href="#">label2</a>
+                               </div>
+                           </div>
+                       </div>

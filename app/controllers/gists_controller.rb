@@ -1,7 +1,8 @@
 class GistsController < ApplicationController
+  before_action :authenticate_user!
   before_filter :find_gist, only: [:show, :edit]
+  before_filter :find_gists, only: [:show, :index]
   def index
-    @gist = Gist.all.order('created_at DESC')
   end
 
   def new
@@ -20,6 +21,10 @@ class GistsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit
@@ -35,5 +40,9 @@ class GistsController < ApplicationController
 
   def find_gist
     @gist = Gist.find(params[:id])
+  end
+
+  def find_gists
+    @gists = Gist.where('user_id = ?', current_user.id).order('created_at DESC')
   end
 end

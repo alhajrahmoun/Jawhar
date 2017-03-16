@@ -1,30 +1,3 @@
-<div class="row">
-    <section class="gists col l12 s12" id="gists">
-        <div class="container" style="width: 95%">
-            <div class="row">
-                <div class="col l3 m4 s11">
-                   <div class="last-gists">
-                       <div class="last-gist">
-                           <h5 class="last-gist-title">
-                               <%= link_to gist.title, gist_path(gist) %>
-                           </h5>
-                           <div class="comment-files-count">
-                               <i class="zmdi zmdi-comments">0</i>
-                               <i class="zmdi zmdi-file"><%= gist.snippets.count %></i>
-                           </div>
-                           <div class="tags">
-                               <div class="tag">
-                                   <a href="#">label1</a>
-                               </div>
-                               <div class="tag">
-                                   <a href="#">label2</a>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                </div> 
-                <div class="col l8 m8 s12">
-                    <div class="gist">
                         <div class="gist-head">
                            <div class="heading">
                                  <h5><%= gist.title %></h5>
@@ -74,9 +47,3 @@
                             </div>
                         <% end %>
                         </div>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </section>
-</div>

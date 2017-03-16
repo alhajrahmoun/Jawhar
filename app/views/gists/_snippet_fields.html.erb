@@ -1,7 +1,19 @@
 <div class="nested-fields">
 	<%= f.text_field :name %>
 
-	<%= f.text_area :code,  class: 'snippets' %>
+	<%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
 
 	<%= link_to_remove_association('حذف', f) %>
 </div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var value = $('.snippets').last().data('val');
+      $('#gist_snippets_attributes_'+value+'_code').each(function() {
+		    var editor = CodeMirror.fromTextArea(this, {
+		        lineNumbers : true,
+		        matchBrackets : true
+		    });
+		});
+});
+</script>
