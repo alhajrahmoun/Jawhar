@@ -1,0 +1,13 @@
+<div class="user-img">
+    <%= image_tag comment.user.avatar, width: 100, height: 100%>
+        <div class="comment-contain">
+            <div class="comment-head">
+                <h4>علق <span><%= owner(comment) %></span> منذ <%= time_ago_in_words(comment.created_at) %></h4>
+            </div>
+            <div class="comment-content">
+            <p>
+               <%= raw comment.content %>
+            </p>
+            </div>
+         </div>
+</div>
