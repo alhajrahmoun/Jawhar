@@ -30,6 +30,7 @@
           <div class="btn" style="float: right; margin-left: 10px">
               <span>الصورة الشخصية</span>
               <%= f.file_field :avatar%>
+              <%= f.hidden_field :avatar_cache %>
           </div>
           <div class="file-path-wrapper">
               <input class="file-path validate" type="text">
