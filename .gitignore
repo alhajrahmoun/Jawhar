@@ -18,6 +18,7 @@
 
 #database.yml
 /config/database.yml
+/config/cloudinary.yml
 
 ngrok
 public/uploads/tmp/
