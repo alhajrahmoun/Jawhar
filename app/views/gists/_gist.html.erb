@@ -37,8 +37,6 @@
                         </div>
                         <div class="comments">
                         <% gist.comments.each do |comment| %>
-                          <div class="comment">
                                 <%= render 'comments/comment', comment: comment %>
-                          </div>
                         <% end %>
                         </div>

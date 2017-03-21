@@ -84,4 +84,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
+  config.i18n.default_locale = :ar
 end
