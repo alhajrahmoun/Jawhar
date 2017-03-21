@@ -1,7 +1,8 @@
 $('.gist').html("<%= escape_javascript(render 'gist', gist: @gist) %>");
 $('.snippets').each(function() {
     var editor = CodeMirror.fromTextArea(this, {
-        lineNumbers : true,
-        matchBrackets : true
+        lineNumbers: true,
+        matchBrackets: true,
+        readOnly: true
     });
 });
