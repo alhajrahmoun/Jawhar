@@ -20,3 +20,4 @@
 /config/database.yml
 
 ngrok
+public/uploads/tmp/
