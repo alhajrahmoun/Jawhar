@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'ahoy_matey'
 gem 'devise'
+gem 'simple_form'
 gem 'carrierwave', '~> 1.0'
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'cocoon'
