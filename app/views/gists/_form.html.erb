@@ -10,11 +10,11 @@
 	<% end %>
 	</div>
 
-	<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'أضف وسوماً خاصة بالجوهر' %>
-
 	<div class="links">
 		<%= link_to_add_association 'أضف ملفاً', f, :snippets %>
 	</div>
+
+	<%= f.text_field :tag_list, value: f.object.tag_list.to_s, placeholder: 'أضف وسوماً خاصة بالجوهر' %>
 	
 	<%= f.submit %>
 <% end %>
