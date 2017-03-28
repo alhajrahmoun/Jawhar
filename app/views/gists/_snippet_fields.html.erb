@@ -7,13 +7,11 @@
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-		var value = $('.snippets').last().data('val');
-      $('#gist_snippets_attributes_'+value+'_code').each(function() {
-		    var editor = CodeMirror.fromTextArea(this, {
+	var value = $('.snippets').last().data('val');
+    $('#gist_snippets_attributes_'+value+'_code').each(function() {
+		var editor = CodeMirror.fromTextArea(this, {
 		        lineNumbers : true,
 		        matchBrackets : true
 		    });
 		});
-});
 </script>
