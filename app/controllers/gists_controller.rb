@@ -3,6 +3,9 @@ class GistsController < ApplicationController
   before_action :find_gist, only: [:show, :edit, :update]
   before_action :find_gists, only: [:show, :index]
   def index
+    if @gists.empty?
+      refirect_to new_gist_path
+    end
   end
 
   def explore
