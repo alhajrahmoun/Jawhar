@@ -16,7 +16,12 @@
   <body>
   <nav>
 <div class="nav-wrapper">
-  <%= link_to "جوهر", root_path, class: 'brand-logo'%>
+  <% if user_signed_in? %>
+    <%= link_to "جوهر", gists_path, class: 'brand-logo'%>
+  <% else %>
+    <%= link_to "جوهر", root_path, class: 'brand-logo'%>
+  <% end %>
+    
   <ul class="right hide-on-med-and-down" id="nav-mobile">
         <%= render 'layouts/navbar'%>
   </ul>

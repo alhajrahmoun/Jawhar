@@ -1,6 +1,6 @@
 class GistsController < ApplicationController
-  #before_action :authenticate_user!
-  before_action :find_gist, only: [:show, :edit]
+  before_action :authenticate_user!
+  before_action :find_gist, only: [:show, :edit, :update]
   before_action :find_gists, only: [:show, :index]
   def index
   end
@@ -30,6 +30,14 @@ class GistsController < ApplicationController
   def edit
   end
 
+  def update
+    if @gist.update(gist_params)
+      redirect_to @gist
+    else
+      render 'new'
+    end
+  end
+
   def delete
   end
 
@@ -43,7 +51,6 @@ class GistsController < ApplicationController
   end
 
   def find_gists
-    #@gists = Gist.where('user_id = ?', current_user.id).order('created_at DESC')
-    @gists = Gist.all.order('created_at DESC')
+    @gists = Gist.where('user_id = ?', current_user.id).order('created_at DESC')
   end
 end
