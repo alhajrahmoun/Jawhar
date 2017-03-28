@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/change_rejected'
+
+  get 'pages/not_found'
+
+  get 'pages/internal_error'
+
   get 'comments/new'
 
   get 'tags/index'
@@ -13,6 +21,6 @@ Rails.application.routes.draw do
   resources :gists
   resources :tags, only: [:index, :show]
   resources :comments, only: [:create]
-  root 'gists#index'
+  root 'pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

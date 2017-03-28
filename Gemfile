@@ -55,10 +55,10 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
-  gem 'rubocop', require: false
+  #gem 'rubocop', require: false
   gem 'better_errors'
-  gem 'bullet'
-  gem 'brakeman', :require => false
+  #gem 'bullet'
+  #gem 'brakeman', :require => false
   gem 'newrelic_rpm'
   gem 'meta_request'
   gem 'rails_db'
