@@ -5,6 +5,10 @@ class GistsController < ApplicationController
   def index
   end
 
+  def explore
+    @gists = Gist.all.order('created_at DESC')
+  end
+
   def new
     @gist = Gist.new
     @gist.snippets.build

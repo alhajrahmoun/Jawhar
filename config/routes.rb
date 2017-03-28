@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   	confirmations: 'users/confirmations'
   }
-  resources :gists
+  resources :gists do 
+    collection do 
+      get :explore
+    end
+  end
   resources :tags, only: [:index, :show]
   resources :comments, only: [:create]
   root 'pages#index'
