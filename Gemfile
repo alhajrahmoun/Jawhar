@@ -45,6 +45,7 @@ gem 'cocoon'
 gem 'codemirror-rails'
 gem 'trix'
 gem 'rails_db'
+gem 'newrelic_rpm'
 gem 'rails_12factor'
 
 group :development, :test do
@@ -60,6 +61,6 @@ group :development do
   gem 'better_errors'
   #gem 'bullet'
   #gem 'brakeman', :require => false
-  gem 'newrelic_rpm'
+  
   gem 'meta_request'
 end
