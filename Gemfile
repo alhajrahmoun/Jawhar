@@ -44,6 +44,7 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'cocoon'
 gem 'codemirror-rails'
 gem 'trix'
+gem 'rails_db'
 gem 'rails_12factor'
 
 group :development, :test do
@@ -61,5 +62,4 @@ group :development do
   #gem 'brakeman', :require => false
   gem 'newrelic_rpm'
   gem 'meta_request'
-  gem 'rails_db'
 end
