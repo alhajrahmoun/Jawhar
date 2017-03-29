@@ -9,7 +9,7 @@ class GistsController < ApplicationController
   end
 
   def explore
-    @gists = Gist.all.order('created_at DESC')
+    @gists = Gist.all.includes(:tags, :snippets, comments: :user).order('created_at DESC')
   end
 
   def new
@@ -54,10 +54,10 @@ class GistsController < ApplicationController
   end
 
   def find_gist
-    @gist = Gist.find(params[:id])
+    @gist = Gist.includes(:tags, :snippets, comments: :user).find(params[:id])
   end
 
   def find_gists
-    @gists = Gist.where('user_id = ?', current_user.id).order('created_at DESC')
+    @gists = Gist.includes(:tags, :snippets, comments: :user).where('user_id = ?', current_user.id).order('created_at DESC')
   end
 end

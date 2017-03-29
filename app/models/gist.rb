@@ -14,6 +14,7 @@ class Gist < ApplicationRecord
 
 	acts_as_taggable_on :tags
 
+
 	private 
 	def snippets_count_valid?
 		snippets.reject(&:marked_for_destruction?).count >= SNIPPETS_COUNT_MIN
