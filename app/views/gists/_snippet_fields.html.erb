@@ -1,9 +1,14 @@
 <div class="nested-fields">
-	<%= f.text_field :name, placeholder: 'اسم الملف' %>
+	<div class="input-field col s6">
+        <label for="title">اسم الملف</label>
+        <%= f.text_field :name, class: 'validate' %>
+    </div>
 
-	<%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
-
-	<%= link_to_remove_association('حذف', f) %>
+    <div class="input-field col s6">
+        <%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
+    </div>
+    
+	<%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect' %>
 </div>
 
 <script type="text/javascript">

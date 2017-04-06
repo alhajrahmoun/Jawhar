@@ -28,6 +28,7 @@
                              </div>
                         </div>
                         <div class="files">
+                        <%= text_area_tag 'description', gist.description, class: 'materialize-textarea' %>
                           <% gist.snippets.each do |snippet| %>
                             <div class="file" style="direction: ltr">
                               <%= text_field_tag 'file', snippet.name, readonly: true %>
@@ -36,11 +37,15 @@
                           <% end %>
                         </div>
                         <br />
+                        <h5>قم بإضافة تعليق</h5>
                          <div class="add-comments">
                         <%= form_for Comment.new, :url => comments_path(@comment), remote: true do |f|%>
                           <%= f.hidden_field :gist_id, value: gist.id %>
                           <%= f.trix_editor :content %>
-                          <%= f.submit %>
+                          <div class="add waves-effect waves-light btn">
+                          <i class="zmdi zmdi-comment"></i>
+                            <%= f.submit "إدراج التعليق", class: 'create-comment', data_disable_with: 'جاري إدراج التعليق' %>
+                          </div>
                         <% end %>
                         </div>
                         <div class="comments">

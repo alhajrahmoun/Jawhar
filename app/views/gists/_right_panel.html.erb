@@ -1,6 +1,6 @@
                       <% if gist.id == active %>
-                      <div id="active">
                        <div class="last-gist">
+                       <div id="active">
                            <h5 class="last-gist-title">
                                <%= link_to gist.title, gist_path(gist), remote: true %>
                            </h5>
@@ -28,6 +28,4 @@
                        </div>
                        <% end %>
 
-                      <script type="text/javascript">
-                      $('.last-gists').scrollTo('#active');
-                      </script>
+                      

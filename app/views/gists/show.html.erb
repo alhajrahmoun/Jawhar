@@ -1,4 +1,4 @@
-<%= render 'gists/gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
+<%= render 'gists/gists', gists: @gists, gist: @gist, active: @gist.id %>
 
 <script type="text/javascript">
   $('.snippets').each(function() {
@@ -8,4 +8,5 @@
         readOnly: true
     });
 });
+  $('.last-gists').scrollTo('#active');
 </script>

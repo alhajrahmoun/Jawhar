@@ -501,6 +501,23 @@ section#gists .last-gists .last-gist h5 a {
 section#gists .last-gists .last-gist h5 a:hover {
     text-decoration: underline;
 }
+section#gists .last-gists #active {
+    width: 100%;
+    background: #DC3522;
+    padding: 20px;
+    color: #1E1E20;
+    border-radius: 5px;
+    margin: 15px 0px;
+}
+section#gists .last-gists .last-gist #active {
+   
+}
+section#gists .last-gists #active .tags .tag {
+    background: #D9CB9E;
+}
+section#gists .last-gists #active .tags .tag a {
+    color: #150f0f;
+}
 section#gists .last-gists .comment-files-count {
     text-align: center;
     padding: 5px;
@@ -575,4 +592,22 @@ section#gists .last-gists .tags .tag a {
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+.add-comments .add {
+    padding: 10px;
+    height: 50px;
+    margin: 20px 0px;
+    background: #374140;
+    width: 100%;
+    font-family: 'Cairo', sans-serif;
+}
+
+a.remove_fields.existing,
+a.remove_fields.dynamic {
+    margin: 20px 0px;
+    width: 100%;
+    height: 40px;
+    background: #DC3522;
+    font-family: 'Cairo', sans-serif;
 }
