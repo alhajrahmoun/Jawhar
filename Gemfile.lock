@@ -150,6 +150,8 @@ GEM
       activerecord (>= 3.0)
     public_suffix (2.0.5)
     puma (3.7.1)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.1)
     rack-attack (5.0.1)
       rack
@@ -283,6 +285,7 @@ DEPENDENCIES
   newrelic_rpm
   pg (~> 0.18)
   puma (~> 3.0)
+  pundit
   rails (~> 5.0.2)
   rails_12factor
   rails_db

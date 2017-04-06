@@ -35,9 +35,11 @@ class GistsController < ApplicationController
   end
 
   def edit
+    authorize @gist
   end
 
   def update
+    authorize @gist
     if @gist.update(gist_params)
       redirect_to @gist
     else

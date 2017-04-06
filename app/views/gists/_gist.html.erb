@@ -4,11 +4,19 @@
                                 <span class="edit-times"><a href="#">0</a></span>
                            </div>
                             <div class="gist-tools">
-                              <%= link_to edit_gist_path(gist), class: 'edit' do %>
-                                <i class="zmdi zmdi-edit"></i>
+                            <% if policy(gist).edit? %>
+                               <%= link_to edit_gist_path(gist), class: 'edit' do %>
+                                <i class="zmdi zmdi-edit tooltip">
+                                   <span class="tooltiptext">تعديل</span>
+                                </i>
                               <% end %>
-                                
-                                <a class="link" href="#"><i class="zmdi zmdi-link"></i></a>
+                            <% end %> 
+                            
+                            <%= link_to gist_path(gist), class: 'link' do %>
+                                <i class="zmdi zmdi-link tooltip">
+                                  <span class="tooltiptext">رابط</span>
+                                </i>
+                            <% end %>  
                                 <a class="share" href="#"><i class="zmdi zmdi-share"></i></a>
                             </div>
                             <div class="coder-link">
