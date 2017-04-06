@@ -7,10 +7,10 @@ class GistPolicy
   end
 
   def edit?
-    user == gist.user || user.admin?
+    user == gist.user
   end
 
   def update?
-    user == gist.user || user.admin?
+    user == gist.user
   end
 end
