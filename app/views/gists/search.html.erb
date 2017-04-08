@@ -1,12 +1,18 @@
-<%= render 'gists/gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
+<% unless @gists.empty? %>
+	<%= render 'gists/gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
 
-<script type="text/javascript">
-  $('.snippets').each(function() {
-    var editor = CodeMirror.fromTextArea(this, {
-        lineNumbers: true,
-        matchBrackets: true,
-        readOnly: true
-    });
-});
-  $('.last-gists').scrollTo('#active');
-</script>
+	<script type="text/javascript">
+	  $('.snippets').each(function() {
+	    var editor = CodeMirror.fromTextArea(this, {
+	        lineNumbers: true,
+	        matchBrackets: true,
+	        readOnly: true
+	    });
+	});
+	  $('.last-gists').scrollTo('#active');
+	</script>
+
+<% else %>
+
+	<h2>لايوجد نتائج بحث</h2>
+<% end %>

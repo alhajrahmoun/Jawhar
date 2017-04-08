@@ -13,10 +13,8 @@ class GistsController < ApplicationController
   end
 
   def search
-    @gists = []
-    PgSearch.multisearch(params[:query]).find_each do |doc|
-       @gists << doc.searchable
-    end
+    @gists = Gist.search_by_title(params[:query])
+    redirect_to root_path if @gists.nil?
   end
 
   def new
