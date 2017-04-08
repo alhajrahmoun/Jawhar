@@ -1,4 +1,4 @@
-$('.gists').html("<%= escape_javascript(render 'gists/gists', gists: @gists, gist: @gist, active: @gist.id) %>");
+$('.gist').html(" <%= escape_javascript(render 'gist', gists: @gists, gist: @gist) %>");
 $('.snippets').each(function() {
     var editor = CodeMirror.fromTextArea(this, {
         lineNumbers: true,
@@ -6,4 +6,3 @@ $('.snippets').each(function() {
         readOnly: true
     });
 });
-$('.last-gists').scrollTo('#active');

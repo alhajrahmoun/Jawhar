@@ -1,7 +1,6 @@
                       <% if gist.id == active %>
                        <div class="last-gist">
-                       <div id="active">
-                           <h5 class="last-gist-title">
+                           <h5 class="last-gist-title active">
                                <%= link_to gist.title, gist_path(gist), remote: true %>
                            </h5>
                            <div class="comment-files-count">
@@ -11,7 +10,6 @@
                            <div class="tags">
                               <%= render gist.tags %>
                            </div>
-                       </div>
                        </div>
                        <% else %>
                         <div class="last-gist">
@@ -28,4 +26,11 @@
                        </div>
                        <% end %>
 
+                       <script type="text/javascript">
+                         $(".last-gist-title").on("click", function() {
+                                $('.last-gist-title').removeClass('active');
+                                $(this).addClass('active');
+                                $('.last-gists').scrollTo(this);
+                            })
+                       </script>
                       

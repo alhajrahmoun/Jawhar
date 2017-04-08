@@ -501,7 +501,7 @@ section#gists .last-gists .last-gist h5 a {
 section#gists .last-gists .last-gist h5 a:hover {
     text-decoration: underline;
 }
-section#gists .last-gists #active {
+.active {
     width: 100%;
     background: #DC3522;
     padding: 20px;
@@ -509,9 +509,7 @@ section#gists .last-gists #active {
     border-radius: 5px;
     margin: 15px 0px;
 }
-section#gists .last-gists .last-gist #active {
-   
-}
+
 section#gists .last-gists #active .tags .tag {
     background: #D9CB9E;
 }
