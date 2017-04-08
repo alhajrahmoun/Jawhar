@@ -1,15 +1,15 @@
 class GistsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_gist, only: [:show, :edit, :update]
-  before_action :find_gists, only: [:show, :index]
+  before_action :find_gists, only: [:index]
+  before_action :explore_gists, only: [:explore]
   def index
     if @gists.empty?
-      refirect_to new_gist_path
+      redirect_to new_gist_path
     end
   end
 
   def explore
-    @gists = Gist.all.includes(:tags, :snippets, comments: :user).order('created_at DESC')
   end
 
   def new
@@ -28,6 +28,11 @@ class GistsController < ApplicationController
   end
 
   def show
+    if @gist.user == current_user
+      find_gists
+    else
+      explore_gists
+    end
     respond_to do |format|
       format.html
       format.js
@@ -61,5 +66,9 @@ class GistsController < ApplicationController
 
   def find_gists
     @gists = Gist.includes(:tags, :snippets, comments: :user).where('user_id = ?', current_user.id).order('created_at DESC')
+  end
+
+  def explore_gists
+    @gists = Gist.where.not(user_id: current_user.id).includes(:tags, :snippets, comments: :user).order('created_at DESC')
   end
 end
