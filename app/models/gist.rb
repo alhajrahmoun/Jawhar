@@ -1,4 +1,7 @@
 class Gist < ApplicationRecord
+	include PgSearch
+	multisearchable :against => :title
+	has_paper_trail
 	SNIPPETS_COUNT_MIN = 1
 
 	has_many :snippets, inverse_of: :gist, dependent: :destroy

@@ -79,7 +79,7 @@ nav .search {
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(217,203,158, .8);
+    background: rgba(217,203,158, 0.97);
     height: 1000px;
     overflow: hidden;
 }

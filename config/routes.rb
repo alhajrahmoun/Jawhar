@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :gists do 
     collection do 
       get :explore
+      get :search
     end
   end
   resources :tags, only: [:index, :show]

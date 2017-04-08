@@ -46,7 +46,9 @@ gem 'codemirror-rails'
 gem 'trix'
 gem 'rails_db'
 gem 'rails_12factor'
-gem "pundit"
+gem 'pundit'
+gem 'paper_trail'
+gem 'pg_search'
 
 
 group :development, :test do

@@ -12,6 +12,13 @@ class GistsController < ApplicationController
   def explore
   end
 
+  def search
+    @gists = []
+    PgSearch.multisearch(params[:query]).find_each do |doc|
+       @gists << doc.searchable
+    end
+  end
+
   def new
     @gist = Gist.new
     @gist.snippets.build

@@ -41,14 +41,14 @@
    <div class="close">
        <i class="zmdi zmdi-close"></i>
    </div>
-    <form class="box-form" method="get">
-       <div class="input-field">
-        <input type="text" placeholder="إبحث ..">
-       </div>
-       <div class="input-field">
-        <input class="waves-effect waves-light btn-large" type="submit" value="إبحث">
-       </div>
-    </form>
+    <%= form_tag('/gists/search', method: :get, class: "box-form") do -%>
+     <div class="input-field">
+      <%= text_field_tag 'query', nil, placeholder: 'ابحث ..' %>
+    </div>
+    <div class="input-field">
+      <%= submit_tag 'ابحث', class: 'waves-effect waves-light btn-large' %>
+    </div>  
+    <% end %>
 </div>
 </div>
     <%= yield %>

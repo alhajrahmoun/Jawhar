@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
+    redirect_to gists_path if user_signed_in?
   end
 
   def change_rejected
