@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require trix
+//= require ckeditor/init
 //= require cocoon
 //= require codemirror
 //= require ahoy

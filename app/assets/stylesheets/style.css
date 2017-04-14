@@ -474,7 +474,7 @@ section#gists .gist .comments .comment .comment-content {
     border-bottom-right-radius: 4px;
 }
 section#gists .gist .comments .comment .comment-content p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-family: 'Cairo', sans-serif;
     color: #374140;
 }
@@ -501,7 +501,7 @@ section#gists .last-gists .last-gist h5 a {
 section#gists .last-gists .last-gist h5 a:hover {
     text-decoration: underline;
 }
-.active {
+.active-gist {
     width: 100%;
     background: #DC3522;
     padding: 20px;

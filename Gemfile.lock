@@ -68,9 +68,15 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    ckeditor (4.2.2)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.1.0)
     cloudinary (1.6.0)
       aws_cf_signer
       rest-client
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     cocoon (1.2.9)
     codemirror-rails (5.16.0)
       railties (>= 3.0, < 6.0)
@@ -245,8 +251,6 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.6)
-    trix (0.10.1)
-      rails
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
@@ -280,6 +284,7 @@ DEPENDENCIES
   better_errors
   byebug
   carrierwave (~> 1.0)
+  ckeditor
   cloudinary
   cocoon
   codemirror-rails
@@ -300,7 +305,6 @@ DEPENDENCIES
   rails_db
   sass-rails (~> 5.0)
   simple_form
-  trix
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)

@@ -1,18 +1,16 @@
+<%= javascript_include_tag 'jquery.tagsinput.min.js' %>
+<%= stylesheet_link_tag 'jquery.tagsinput.min.css' %>
 <div class="container">
 <%= form_for @gist do |f|%>
 	<h4>إضافة جوهر جديد</h4>
 	<div class="input-field col s6">
-        <label for="title">عنوان الجوهر</label>
-        <%= f.text_field :title, class: 'validate' %>
+        <%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
     </div>
 
     <div class="input-field col s6">
-        <label for="title">وصف الجوهر</label>
-        <%= f.text_area :description, class: 'materialize-textarea' %>
+        <%= f.text_area :description, placeholder: 'وصف الجوهر', class: 'materialize-textarea' %>
     </div>
 	
-	
-
 	<div id="snippets">
 	<%= f.fields_for :snippets do |snippet| %>
 		<%= render "snippet_fields", f: snippet %>
@@ -24,11 +22,19 @@
 	</div>
 	<br>
 	<div class="input-field col s6">
-        <label for="title">ضِف وسوماً للجوهر</label>
-        <%= f.text_field :tag_list, value: f.object.tag_list.to_s, class: 'validate' %>
+        <%= f.text_field :tag_list, id: 'tags', value: f.object.tag_list.to_s, placeholder: 'ضِف وسوماً للجوهر', class: 'validate' %>
     </div>
 	
-	
+	<br>
 	<%= f.submit "حفظ", class: 'update-gist btn wave-effect' %>
 <% end %>
 </div>
+
+<script type="text/javascript">
+	$('#tags').tagsInput({
+		'height':'90px',
+	   	'width':'100%',
+	   	'interactive':true,
+	   	'defaultText':'ضِف وسماً '
+	});
+</script>

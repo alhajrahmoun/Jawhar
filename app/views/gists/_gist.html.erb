@@ -1,3 +1,4 @@
+                      <%= javascript_include_tag Ckeditor.cdn_url %>
                         <div class="gist-head">
                            <div class="heading">
                                  <h5><%= gist.title %></h5>
@@ -41,7 +42,7 @@
                          <div class="add-comments">
                         <%= form_for Comment.new, :url => comments_path(@comment), remote: true do |f|%>
                           <%= f.hidden_field :gist_id, value: gist.id %>
-                          <%= f.trix_editor :content %>
+                          <%= f.cktext_area :content %>
                           <div class="add waves-effect waves-light btn">
                           <i class="zmdi zmdi-comment"></i>
                             <%= f.submit "إدراج التعليق", class: 'create-comment', data_disable_with: 'جاري إدراج التعليق' %>
