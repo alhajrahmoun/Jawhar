@@ -29,7 +29,7 @@
                              </div>
                         </div>
                         <div class="files">
-                        <%= text_area_tag 'description', gist.description, class: 'materialize-textarea' %>
+                        <%= text_area_tag 'description', gist.description, class: 'materialize-textarea', readonly: true %>
                           <% gist.snippets.each do |snippet| %>
                             <div class="file" style="direction: ltr">
                               <%= text_field_tag 'file', snippet.name, readonly: true %>
