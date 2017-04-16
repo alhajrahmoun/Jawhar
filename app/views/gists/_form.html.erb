@@ -1,5 +1,3 @@
-<%= javascript_include_tag 'jquery.tagsinput.min.js' %>
-<%= stylesheet_link_tag 'jquery.tagsinput.min.css' %>
 <div class="container">
 <%= form_for @gist do |f|%>
 	<h4>إضافة جوهر جديد</h4>
@@ -22,7 +20,8 @@
 	</div>
 	<br>
 	<div class="input-field col s6">
-        <%= f.text_field :tag_list, id: 'tags', value: f.object.tag_list.to_s, placeholder: 'ضِف وسوماً للجوهر', class: 'validate' %>
+       <!--  <%= f.text_field :tag_list, class: 'tags', value: f.object.tag_list.to_s, placeholder: 'ضِف وسوماً للجوهر' %> -->
+        <%= f.select :tag_list, {}, {prompt: 'ضِف وسوماً للجوهر (افصل بين الوسوم المضافة بفاصلة مثل [ جوهر, تجربة ] )'},{class: 'tags'} %>
     </div>
 	
 	<br>
@@ -31,10 +30,15 @@
 </div>
 
 <script type="text/javascript">
-	$('#tags').tagsInput({
-		'height':'90px',
-	   	'width':'100%',
-	   	'interactive':true,
-	   	'defaultText':'ضِف وسماً '
-	});
+	// $('#tags').tagsInput({
+	// 	'height':'90px',
+	//    	'width':'100%',
+	//    	'interactive':true,
+	//    	'defaultText':'ضِف وسماً '
+	// });
+	$(".tags").select2({
+	  tags: true,
+	  language: "ar",
+	  dir: "rtl"
+	})
 </script>
