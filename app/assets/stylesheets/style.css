@@ -1,3 +1,11 @@
+/*
+    COLORS :
+    Orange : #DC3522
+*/
+/* Materialize Style */
+input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=text]:disabled, input[type=text][readonly="readonly"], input[type=password]:disabled, input[type=password][readonly="readonly"], input[type=email]:disabled, input[type=email][readonly="readonly"], input[type=url]:disabled, input[type=url][readonly="readonly"], input[type=time]:disabled, input[type=time][readonly="readonly"], input[type=date]:disabled, input[type=date][readonly="readonly"], input[type=datetime]:disabled, input[type=datetime][readonly="readonly"], input[type=datetime-local]:disabled, input[type=datetime-local][readonly="readonly"], input[type=tel]:disabled, input[type=tel][readonly="readonly"], input[type=number]:disabled, input[type=number][readonly="readonly"], input[type=search]:disabled, input[type=search][readonly="readonly"], textarea.materialize-textarea:disabled, textarea.materialize-textarea[readonly="readonly"] {
+    color: rgba(0,0,0,0.7);
+}
 *{
     font-family: 'Cairo', sans-serif;
 }
@@ -611,4 +619,38 @@ a.remove_fields.dynamic {
     height: 40px;
     background: #DC3522;
     font-family: 'Cairo', sans-serif;
+}
+div.links {
+    display: inline;
+}
+a.add_fields {
+    width: 48.9%;   
+    background: #374140;
+}
+a.add_fields:hover {
+    background: #374140;  
+}
+input.update-gist {
+    width: 50%;
+    background: #374140;
+}
+input.update-gist:hover {
+    background: #374140;
+}
+/* For All PlaceHolder */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
+    color: rgba(0,0,0,0.7)
+}
+input::-moz-placeholder,, textarea::-moz-input-placeholder { /* Firefox 19+ */
+    color: rgba(0,0,0,0.7)
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(0,0,0,0.7)
+}
+input:-moz-placeholder, textarea:-moz-placeholder { /* Firefox 18- */
+    color: rgba(0,0,0,0.7)
+}
+/* File Field */
+.file-field.input-field .btn {
+    background: #DC3522;
 }
