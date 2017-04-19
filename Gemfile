@@ -50,6 +50,9 @@ gem 'rails_12factor'
 gem 'pundit'
 gem 'paper_trail'
 gem 'pg_search'
+gem 'gentelella-rails'
+gem 'chartkick'
+gem 'groupdate'
 
 
 group :development, :test do

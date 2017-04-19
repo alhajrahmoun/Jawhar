@@ -20,7 +20,6 @@
 	</div>
 	<br>
 	<div class="input-field col s6">
-       <!--  <%= f.text_field :tag_list, class: 'tags', value: f.object.tag_list.to_s, placeholder: 'ضِف وسوماً للجوهر' %> -->
         <%= f.select :tag_list, {}, {prompt: 'ضِف وسوماً للجوهر (افصل بين الوسوم المضافة بفاصلة مثل [ جوهر, تجربة ] )'},{class: 'tags'} %>
     </div>
 	

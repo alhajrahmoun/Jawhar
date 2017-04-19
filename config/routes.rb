@@ -28,5 +28,10 @@ Rails.application.routes.draw do
   resources :tags, only: [:index, :show]
   resources :comments, only: [:create]
   root 'pages#index'
+
+  namespace :admin do 
+    root 'dashboard#index'
+    get 'dashboard/index'
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
