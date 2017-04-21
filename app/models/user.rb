@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :gists, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  before_create do 
+    self.admin = false
+  end
+
   def self.active_users
   	count = 0
   	self.all.each do |user|
