@@ -8,6 +8,9 @@
 <i class="zmdi zmdi-account"></i>
 <% end %>
 <% else %>
+	<% if current_user.admin?%>
+		<li><%= link_to "لوحة تحكم الإدارة", admin_root_path %></li>
+	<% end %>
 	<li><%= link_to "تسجيل الخروج", destroy_user_session_path, method: :delete %></li>
 	<li><%= link_to "إضافة جوهر جديد", new_gist_path %></li>
 	<li><%= link_to "اكتشف", explore_gists_path %></li>

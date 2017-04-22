@@ -10,12 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require materialize
  *= require select2.min
  *= require codemirror
  *= require_style
  */
+
+@import "materialize";
+@import "select2.min";
+@import "materialize";
+@import "codemirror";
+@import "style";
 
 .CodeMirror {
 	direction: ltr;

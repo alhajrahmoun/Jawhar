@@ -108,23 +108,23 @@
       <div class="row tile_count">
       <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
           <span class="count_top"><i class="fa fa-user"></i> Total Visits</span>
-          <div class="count"><%= Visit.count%></div>
+          <div class="count"><%= @visit_count %></div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
           <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-          <div class="count"><%= User.count%></div>
+          <div class="count"><%= @user_count %></div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
           <span class="count_top"><i class="fa fa-user"></i> Active Users</span>
-          <div class="count"><%= User.active_users%></div>
+          <div class="count"><%= @active_users %></div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
           <span class="count_top"><i class="fa fa-user"></i> Total Gists</span>
-          <div class="count"><%= Gist.count%></div>
+          <div class="count"><%= @gist_count %></div>
         </div>
         <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
           <span class="count_top"><i class="fa fa-user"></i> Total Snippets</span>
-          <div class="count"><%= Snippet.count%></div>
+          <div class="count"><%= @snippet_count %></div>
         </div>
       </div>
       <!-- /top tiles -->
