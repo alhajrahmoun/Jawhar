@@ -1,8 +1,7 @@
                       <%= javascript_include_tag Ckeditor.cdn_url %>
                         <div class="gist-head">
                            <div class="heading">
-                                 <h5><%= gist.title %></h5>
-                                <span class="edit-times"><a href="#">0</a></span>
+                                 <h5><%= gist.title %></h5> 
                            </div>
                             <div class="gist-tools">
                             <% if policy(gist).edit? %>

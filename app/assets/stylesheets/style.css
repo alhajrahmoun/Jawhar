@@ -18,6 +18,7 @@ input:not([type]):disabled, input:not([type])[readonly="readonly"], input[type=t
 body {
     background: #f2f2f2;
 }
+
 nav {
     background-color: #374140;
 }
@@ -381,6 +382,9 @@ footer {
     margin-top: 50px;
     padding: 20px;
     background: #DC3522;
+    bottom:0;
+    width:100%;
+    height:90px;
 }
 footer p {
     text-align: center;

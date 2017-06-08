@@ -12,7 +12,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js' %>
   </head>
-
   <body>
   <nav>
 <div class="nav-wrapper">
@@ -52,8 +51,9 @@
 </div>
 </div>
     <%= yield %>
+    
   </body>
   <footer>
-    <p><%= t('views.copyrights')%></p>
-</footer>
+      <p><%= t('views.copyrights')%></p>
+  </footer>
 </html>

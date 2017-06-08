@@ -2,40 +2,27 @@
     <div class="container">
     <div class="row">
        <div class="heading text-center">
-           <h2>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h2>
-           <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.</p>
+           <h1>جوهر</h1>
+           <p>اكتب أكوادك البرمجية مرة واحدة فقط!</p>
        </div>
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s12">
-              <input id="description" type="text">
-              <label for="description">شرح بسيط عن الكود</label>
-            </div>
             <div class="file-gist-code">
                <div class="col s12">
                     <div class="gist-head">
                         <div class="input-field col l3 m6 s10">
-                            <input class="fileName" type="text" placeholder="أسم الملف مع الصيغة">
+                            <input class="fileName" type="text" placeholder="helloworld.rb" style="font-size: 14px;">
                         </div>
                     </div>
                 </div>
                 <div class="col s12">
                    <div class="contianer">
-                    <div id="editor"></div>
+                   <textarea class="snippets" style="display: none">
+def greetings
+    puts "hello world"
+end</textarea>
+
                    </div>
-                </div>
-                <div class="file-progress">
-                    <div class="col s12">
-                        <div class="col l4 m4 s12">
-                            <a href="#" class="waves-effect waves-light btn-large sign-with-fb">حفظ</a>
-                        </div>
-                        <div class="col l4 m4 s12">
-                            <a href="#" class="waves-effect waves-light btn-large sign-with-fb">حفظ خاص</a>
-                        </div>
-                        <div class="col l4 m4 s12">
-                            <a href="#" class="waves-effect waves-light btn-large sign-with-fb">إضافة ملف</a>
-                        </div>
-                    </div>
                 </div>
             </div>
           </div>
@@ -47,8 +34,8 @@
     <div class="container">
         <div class="row">
             <div class="feature1">
-                <div class="col l6 s12">
-                    <h4>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h4>
+                <div class="col l6 pull-l3 s12">
+                    <h4>احتفظ بالأكواد التي تكتبها لتستخدمها لاحقاً</h4>
                     <p>
                         هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
                         إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.
@@ -56,18 +43,6 @@
                 </div>
                 <div class="col l6 s12">
                     <img src="img/features1.png">
-                </div>
-            </div>
-            <div class="feature2">
-                <div class="col l6 s12">
-                    <h4>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة</h4>
-                    <p>
-                        هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-                        إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.
-                    </p>
-                </div>
-                <div class="col l6 s12">
-                    <img src="img/features2.png">
                 </div>
             </div>
         </div>
@@ -114,3 +89,12 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+  $('.snippets').each(function() {
+    var editor = CodeMirror.fromTextArea(this, {
+        lineNumbers: true,
+        matchBrackets: true,
+        readOnly: true
+    });
+});
+</script>
