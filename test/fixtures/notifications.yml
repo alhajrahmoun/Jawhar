@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  subscribed_user: one
+  comment_id: 1
+  gist: one
+  read: false
+
+two:
+  user: two
+  subscribed_user: two
+  comment_id: 1
+  gist: two
+  read: false

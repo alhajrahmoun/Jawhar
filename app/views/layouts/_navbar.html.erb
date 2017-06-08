@@ -13,6 +13,7 @@
 	<% end %>
 	<li><%= link_to "تسجيل الخروج", destroy_user_session_path, method: :delete %></li>
 	<li><%= link_to "إضافة جوهر جديد", new_gist_path %></li>
+	<li><%= link_to "التنبيهات #{Notification.get_unread_count(current_user)}", notifications_path %></li>
 	<li><%= link_to "اكتشف", explore_gists_path %></li>
 	<li><%= link_to "جوهري", gists_path %></li>
 <% end %>

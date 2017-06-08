@@ -1,13 +1,29 @@
 <div class="nested-fields">
-	<div class="input-field col s6">
-        <%= f.text_field :name, placeholder: 'اسم الملف', class: 'validate' %>
+<section id="presintaion" class="Gist-pres">
+    <div class="container">
+    <div class="row">
+        <div class="col s12">
+          <div class="row">
+            <div class="file-gist-code">
+               <div class="col s12">
+                    <div class="gist-head">
+                        <div class="input-field col l3 m6 s10">
+                             <%= f.text_field :name, placeholder: 'اسم الملف', class: 'fileName' %>   
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                   <div class="contianer">
+                    <%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
+                   </div>
+                </div>
+            </div>
+          </div>
+          <%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect' %>
+        </div>
+      </div>
     </div>
-
-    <div class="input-field col s6">
-        <%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
-    </div>
-    
-	<%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect' %>
+</section>
 </div>
 
 <script type="text/javascript">

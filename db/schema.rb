@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170421130515) do
+ActiveRecord::Schema.define(version: 20170607193522) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,19 @@ ActiveRecord::Schema.define(version: 20170421130515) do
     t.integer  "snippets_count", default: 0
     t.integer  "comments_count", default: 0
     t.index ["user_id"], name: "index_gists_on_user_id", using: :btree
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "commenter_id"
+    t.integer  "comment_id"
+    t.integer  "gist_id"
+    t.boolean  "read"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["commenter_id"], name: "index_notifications_on_commenter_id", using: :btree
+    t.index ["gist_id"], name: "index_notifications_on_gist_id", using: :btree
+    t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -186,5 +199,8 @@ ActiveRecord::Schema.define(version: 20170421130515) do
   add_foreign_key "comments", "gists"
   add_foreign_key "comments", "users"
   add_foreign_key "gists", "users"
+  add_foreign_key "notifications", "gists"
+  add_foreign_key "notifications", "users"
+  add_foreign_key "notifications", "users", column: "commenter_id"
   add_foreign_key "snippets", "gists"
 end

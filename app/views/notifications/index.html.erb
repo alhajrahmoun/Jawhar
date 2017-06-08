@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class=".col-md-6.col-md-offset-3">
+			<ul class="notification-index-list">
+				<% @notifications.each do |notification|%>
+				<li> <% unless notification.read? %> (<i> جديد</i>) || <% end %> قام <%= full_name(notification.commenter) %> بالتعليق على  <%= link_to 'الجوهر', link_notification_path(notification) %> منذ <%= time_ago_in_words(notification.created_at) %></li>
+					<% end %>
+			</ul>	
+		</div>
+	</div>
+
+</div>
+
+

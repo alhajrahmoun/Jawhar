@@ -7,6 +7,7 @@ class Gist < ApplicationRecord
 	has_many :snippets, inverse_of: :gist, dependent: :destroy
 	accepts_nested_attributes_for :snippets, allow_destroy: true, reject_if: :all_blank
 	has_many :comments, dependent: :destroy
+	has_many :notifications
 	belongs_to :user
 
 	validates :title, presence: true

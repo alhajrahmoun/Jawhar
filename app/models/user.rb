@@ -6,6 +6,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :gists, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :notifications
 
   before_create do 
     self.admin = false

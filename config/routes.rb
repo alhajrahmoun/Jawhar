@@ -25,6 +25,11 @@ Rails.application.routes.draw do
       get :search
     end
   end
+  resources :notifications do 
+    member do 
+      get :link
+    end
+  end
   resources :tags, only: [:index, :show]
   resources :comments, only: [:create]
   root 'pages#index'

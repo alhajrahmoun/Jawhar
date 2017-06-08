@@ -30,12 +30,33 @@
                         </div>
                         <div class="files">
                         <%= text_area_tag 'description', gist.description, class: 'materialize-textarea', readonly: true %>
+
                           <% gist.snippets.each do |snippet| %>
                             <div class="file" style="direction: ltr">
-                              <%= text_field_tag 'file', snippet.name, readonly: true %>
-                              <%= text_area_tag 'snippet', snippet.code, class: 'snippets'%>  
+                              <section id="presintaion" class="Gist-pres">
+                                <form class="col s12">
+                                  <div class="row">
+                                    <div class="file-gist-code">
+                                       <div class="col s12">
+                                            <div class="gist-head">
+                                                <div class="input-field col l3 m6 s10">
+                                                     <%= text_field_tag 'file', snippet.name, readonly: true, class: 'fileName' %> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                           <div class="contianer">
+                                            <%= text_area_tag 'snippet', snippet.code, class: 'snippets'%> 
+                                           </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                </form>
+                        </section>  
                             </div> 
                           <% end %>
+
+
                         </div>
                         <br />
                         <h5>قم بإضافة تعليق</h5>
