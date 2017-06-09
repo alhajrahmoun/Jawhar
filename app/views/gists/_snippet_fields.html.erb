@@ -7,7 +7,7 @@
             <div class="file-gist-code">
                <div class="col s12">
                     <div class="gist-head">
-                        <div class="input-field col l3 m6 s10">
+                        <div class="input-field col l3 pull-l9 m6 s10">
                              <%= f.text_field :name, placeholder: 'اسم الملف', class: 'fileName' %>   
                         </div>
                     </div>
@@ -34,4 +34,11 @@
 		        matchBrackets : true
 		    });
 		});
+
+    $(document).ready(function(){
+      var val = $('.nested-fields').last().data('value');
+      $('.remove_fields').click(function(){
+        alert('هل أنت متأكد أنك تريد حذف الملف؟');
+       });
+});
 </script>

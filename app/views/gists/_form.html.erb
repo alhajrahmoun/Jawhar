@@ -1,5 +1,5 @@
-<div class="container">
 <%= form_for @gist do |f|%>
+<div class="container">
 	<h4>إضافة جوهر جديد</h4>
 	<div class="input-field col s6">
         <%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
@@ -15,18 +15,26 @@
 	<% end %>
 	</div>
 
-	<div class="links">
-		<%= link_to_add_association 'ضِف ملفاً جديداً', f, :snippets, class: 'add_fields btn wave-effect' %>
+	<div class="row">
+		<div class="col l8 pull-l2">
+			<%= link_to_add_association 'ضِف ملفاً جديداً', f, :snippets, class: 'add_fields btn wave-effect' %>
+		</div>
 	</div>
-	<br>
-	<div class="input-field col s6">
-        <%= f.select :tag_list, @gist.tags, {prompt: 'ضِف وسوماً للجوهر (افصل بين الوسوم المضافة بفاصلة مثل [ جوهر, تجربة ] )'},{class: 'tags'} %>
+	<div class="row">
+		<div class="input-field col l8 pull-l2">
+	        <%= f.select :tag_list, @gist.tags, {prompt: 'ضِف وسوماً للجوهر (افصل بين الوسوم المضافة بفاصلة مثل [ جوهر, تجربة ] )'},{class: 'tags'} %>
+	    </div>
     </div>
 	
-	<br>
+
+	<div class="row">
+		<div class="col l8 pull-l2">
 	<%= f.submit "حفظ", class: 'update-gist btn wave-effect' %>
-<% end %>
+		</div>
+	</div>
 </div>
+<% end %>
+
 
 <script type="text/javascript">
 	// $('#tags').tagsInput({

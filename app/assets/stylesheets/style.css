@@ -223,10 +223,11 @@ section.Gist-pres .file-gist-code .gist-head .fileName {
     border: 1px solid #f2f2f2;
     background: #f2f2f2;
     border-radius: 5px;
-    padding: 2px;
+    padding: 1px;
     color: #1E1E20;
     font-family: 'Cairo', sans-serif;
-    font-size: 0.8rem;
+    font-size: 14px;
+    direction: ltr;
 }
 section.Gist-pres .file-gist-code .gist-head .fileName::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #374140;
@@ -618,7 +619,7 @@ section#gists .last-gists .tags .tag a {
 
 a.remove_fields.existing,
 a.remove_fields.dynamic {
-    margin: 20px 0px;
+    margin: 0px 0px 20px;
     width: 100%;
     height: 40px;
     background: #DC3522;
@@ -628,14 +629,14 @@ div.links {
     display: inline;
 }
 a.add_fields {
-    width: 48.9%;   
+    width: 100%;   
     background: #374140;
 }
 a.add_fields:hover {
     background: #374140;  
 }
 input.update-gist {
-    width: 50%;
+    width: 100%;
     background: #374140;
 }
 input.update-gist:hover {
