@@ -19,7 +19,7 @@
                 </div>
             </div>
           </div>
-          <%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect' %>
+          <%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect', data: {confirm: "هل أنت متأكد؟"} %>
         </div>
       </div>
     </div>
@@ -34,11 +34,4 @@
 		        matchBrackets : true
 		    });
 		});
-
-    $(document).ready(function(){
-      var val = $('.nested-fields').last().data('value');
-      $('.remove_fields').click(function(){
-        alert('هل أنت متأكد أنك تريد حذف الملف؟');
-       });
-});
 </script>

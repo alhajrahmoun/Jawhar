@@ -48,11 +48,11 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'rails_db'
 gem 'rails_12factor'
 gem 'pundit'
-gem 'paper_trail'
 gem 'pg_search'
 gem 'gentelella-rails'
 gem 'chartkick'
 gem 'groupdate'
+gem 'mail_form'
 
 
 group :development, :test do
@@ -65,9 +65,6 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   #gem 'rubocop', require: false
-  gem 'better_errors'
   #gem 'bullet'
   #gem 'brakeman', :require => false
-  gem 'newrelic_rpm'
-  gem 'meta_request'
 end

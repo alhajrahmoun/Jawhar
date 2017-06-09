@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   end
   resources :tags, only: [:index, :show]
   resources :comments, only: [:create]
+  resources :contacts, only: [:new, :create]
   root 'pages#index'
 
   namespace :admin do 
