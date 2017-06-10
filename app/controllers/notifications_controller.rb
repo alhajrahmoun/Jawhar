@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
 	end
 
 	def link
-		@notification = Notification.find(params[:id])
+		@notification = current_user.notifications.find(params[:id])
 		@notification.update(read: true)
 		redirect_to gist_path(@notification.gist_id)
 	end

@@ -12,5 +12,9 @@ module Jawhar
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+ #    Raven.configure do |config|
+	#   config.dsn = 'https://e885237485124149b5cf1f7cea06ec27:16a09e3cba594334a51e96ecaba27be7@sentry.io/178313'
+	# end
   end
 end

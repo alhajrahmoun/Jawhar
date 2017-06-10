@@ -652,7 +652,7 @@ input.update-gist:hover {
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
     color: rgba(0,0,0,0.7)
 }
-input::-moz-placeholder,, textarea::-moz-input-placeholder { /* Firefox 19+ */
+input::-moz-placeholder, textarea::-moz-input-placeholder { /* Firefox 19+ */
     color: rgba(0,0,0,0.7)
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder { /* IE 10+ */

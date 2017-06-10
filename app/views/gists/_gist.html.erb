@@ -21,7 +21,7 @@
                             </div>
                             <div class="coder-link">
                                 صاحب الجوهر :
-                                <a href="#"><%= link_to owner(gist), user_path(gist.user) %></a>
+                                <%= link_to owner(gist), user_path(gist.user) %>
                              </div>
                              <div class="coder-link" style="border-left: none">
                                 منذ <%= time_ago_in_words(gist.created_at) %>
