@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
   	confirmations: 'users/confirmations'
   }
+  resources :users
   resources :gists do 
     collection do 
       get :explore

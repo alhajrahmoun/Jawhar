@@ -1,0 +1,18 @@
+<div class="container" style="margin-top: 10px">
+	<div class="row">
+		<div class="col l6 pull-l4 s12">
+			<h5>الجواهر الخاصة بـ <%= owner(@gists.first)%></h5>
+			</div>
+		</div>
+	</div>
+<%= render 'gists/gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
+
+<script type="text/javascript">
+  $('.snippets').each(function() {
+    var editor = CodeMirror.fromTextArea(this, {
+        lineNumbers: true,
+        matchBrackets: true,
+        readOnly: true
+    });
+});
+</script>
