@@ -13,47 +13,51 @@
     <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js' %>
   </head>
   <body>
+  <main>
   <nav>
-<div class="nav-wrapper">
-  <% if user_signed_in? %>
-    <%= link_to "جوهر", gists_path, class: 'brand-logo'%>
-  <% else %>
-    <%= link_to "جوهر", root_path, class: 'brand-logo'%>
-  <% end %>
-    
-  <ul class="right hide-on-med-and-down" id="nav-mobile">
-        <%= render 'layouts/navbar'%>
-  </ul>
-  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="zmdi zmdi-menu"></i></a>
-  <ul class="side-nav" id="mobile-demo">
-        <%= render 'layouts/navbar'%>
-  </ul>
-  <div class="search">
-      <a href="#">
-          <i class="zmdi zmdi-search"></i>
-      </a>
-  </div>
-</div>
-</nav>
-<div class="box-search">
-<div class="container">
-   <div class="close">
-       <i class="zmdi zmdi-close"></i>
-   </div>
-    <%= form_tag('/gists/search', method: :get, class: "box-form") do -%>
-     <div class="input-field">
-      <%= text_field_tag 'query', nil, placeholder: 'ابحث ..' %>
+    <div class="nav-wrapper">
+      <% if user_signed_in? %>
+        <%= link_to "جوهر", gists_path, class: 'brand-logo'%>
+      <% else %>
+        <%= link_to "جوهر", root_path, class: 'brand-logo'%>
+      <% end %>
+        
+      <ul class="right hide-on-med-and-down" id="nav-mobile">
+            <%= render 'layouts/navbar'%>
+      </ul>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="zmdi zmdi-menu"></i></a>
+      <ul class="side-nav" id="mobile-demo">
+            <%= render 'layouts/navbar'%>
+      </ul>
+      <div class="search">
+          <a href="#">
+              <i class="zmdi zmdi-search"></i>
+          </a>
+      </div>
     </div>
-    <div class="input-field">
-      <%= submit_tag 'ابحث', class: 'waves-effect waves-light btn-large' %>
-    </div>  
-    <% end %>
-</div>
-</div>
+</nav>
+  <div class="box-search">
+    <div class="container">
+       <div class="close">
+           <i class="zmdi zmdi-close"></i>
+       </div>
+        <%= form_tag('/gists/search', method: :get, class: "box-form") do -%>
+         <div class="input-field">
+          <%= text_field_tag 'query', nil, placeholder: 'ابحث ..' %>
+        </div>
+        <div class="input-field">
+          <%= submit_tag 'ابحث', class: 'waves-effect waves-light btn-large' %>
+        </div>  
+        <% end %>
+    </div>
+  </div>
+
     <%= yield %>
-    
-  </body>
+  </main>
   <footer>
+    <div class="container">
       <p><%= t('views.copyrights')%></p>
+    </div>
   </footer>
+  </body>
 </html>

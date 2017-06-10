@@ -16,19 +16,19 @@
 	</div>
 
 	<div class="row">
-		<div class="col l8 pull-l2">
+		<div class="col l8 pull-l2 s6">
 			<%= link_to_add_association 'ضِف ملفاً جديداً', f, :snippets, class: 'add_fields btn wave-effect' %>
 		</div>
 	</div>
 	<div class="row">
-		<div class="input-field col l8 pull-l2">
+		<div class="input-field col l8 pull-l2 s12">
 	        <%= f.select :tag_list, @gist.tags, {prompt: 'ضِف وسوماً للجوهر (افصل بين الوسوم المضافة بفاصلة مثل [ جوهر, تجربة ] )'},{class: 'tags'} %>
 	    </div>
     </div>
 	
 
 	<div class="row">
-		<div class="col l8 pull-l2">
+		<div class="col l8 pull-l2 s6">
 	<%= f.submit "حفظ", class: 'update-gist btn wave-effect' %>
 		</div>
 	</div>
