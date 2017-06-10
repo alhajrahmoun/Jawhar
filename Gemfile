@@ -53,6 +53,7 @@ gem 'gentelella-rails'
 gem 'chartkick'
 gem 'groupdate'
 gem 'mail_form'
+gem 'client_side_validations'
 
 
 group :development, :test do

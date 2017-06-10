@@ -10,6 +10,9 @@
                         <div class="input-field col l3 pull-l9 m6 s10">
                              <%= f.text_field :name, placeholder: 'اسم الملف', class: 'fileName' %>   
                         </div>
+                        <div class="col l3 pull-l3 m6 s10" style="margin-top: 15px">
+                          <label for="gist_snippets_attributes_<%= f.object_name[-21..-1][/\[.*?\]/].tr('[]','') %>_name" class="message active" style="font-size: 14px; color: red;"></label>
+                        </div>
                     </div>
                 </div>
                 <div class="col s12">
@@ -34,4 +37,6 @@
 		        matchBrackets : true
 		    });
 		});
+  $("#new_gist").enableClientSideValidations();
+    
 </script>

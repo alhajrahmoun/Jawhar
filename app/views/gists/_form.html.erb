@@ -1,8 +1,9 @@
-<%= form_for @gist do |f|%>
+<%= form_for @gist, validate: true do |f|%>
 <div class="container">
 	
 	<div class="input-field col s6">
         <%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
+        <label for="gist_title" class="message active" style="font-size: 14px; color: red;"></label>
     </div>
 
     <div class="input-field col s6">
@@ -10,9 +11,9 @@
     </div>
 	
 	<div id="snippets">
-	<%= f.fields_for :snippets do |snippet| %>
-		<%= render "snippet_fields", f: snippet %>
-	<% end %>
+		<%= f.fields_for :snippets do |snippet| %>
+			<%= render "snippet_fields", f: snippet %>
+		<% end %>
 	</div>
 
 	<div class="row">

@@ -9,7 +9,7 @@ class Gist < ApplicationRecord
 	has_many :notifications
 	belongs_to :user
 
-	validates :title, presence: true
+	validates :title, presence: { message: "الرجاء إضافة عنوان للجوهر" }
 	validate do
     	check_snippets_number
   	end

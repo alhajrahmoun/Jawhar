@@ -19,6 +19,7 @@
 //= require cocoon
 //= require codemirror
 //= require ahoy
+//= require rails.validations
 
 $(document).ready(function() {
     $("#owner a.add_fields").
