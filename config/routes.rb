@@ -2,16 +2,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   get 'pages/index'
 
-  get 'pages/change_rejected'
-
-  get 'pages/not_found'
-
-  get 'pages/internal_error'
-
   get 'comments/new'
 
   get 'tags/index'
-
   get 'tags/show'
 
   devise_for :users, controllers: { 

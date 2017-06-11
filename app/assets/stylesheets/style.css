@@ -486,7 +486,7 @@ section#gists .gist .comments .comment .comment-head h4 {
     color: #374140;
     margin-right: 10px;
 }
-section#gists .gist .comments .comment .comment-head h4 span {
+section#gists .gist .comments .comment .comment-head h4 a {
     color: #DC3522;
 }
 section#gists .gist .comments .comment .comment-content {

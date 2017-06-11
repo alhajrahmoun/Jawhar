@@ -1,10 +1,11 @@
 class Gist < ApplicationRecord
 	include PgSearch
 	pg_search_scope :search_by_title, :against => :title
-	SNIPPETS_COUNT_MIN = 1
+	acts_as_taggable_on :tags
 
 	has_many :snippets, inverse_of: :gist, dependent: :destroy
 	accepts_nested_attributes_for :snippets, allow_destroy: true, reject_if: :all_blank
+
 	has_many :comments, dependent: :destroy
 	has_many :notifications
 	belongs_to :user
@@ -14,9 +15,7 @@ class Gist < ApplicationRecord
     	check_snippets_number
   	end
 
-
-	acts_as_taggable_on :tags
-
+	SNIPPETS_COUNT_MIN = 1
 
 	private 
 	def snippets_count_valid?

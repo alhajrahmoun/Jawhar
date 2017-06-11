@@ -4,20 +4,19 @@
 
   <%= simple_form_for @contact do |f| %>
   <div class="container">
-  <div class="input-field col s6">
-    <%= f.input :name, label: 'الاسم', :required => true, class: 'validate' %>
+    <div class="input-field col s6">
+      <%= f.input :name, label: 'الاسم', :required => true, class: 'validate' %>
     </div>
     <div class="input-field col s6">
-    <%= f.input :email, label: 'البريد الالكتروني', :required => true, class: 'validate' %>
+      <%= f.input :email, label: 'البريد الالكتروني', :required => true, class: 'validate' %>
     </div>
     <div class="input-field col s6">
-    <%= f.input :message, label: "الرسالة", :as => :text, input_html: { :style=> 'height: 7rem;'} %>
-
+      <%= f.input :message, label: "الرسالة", :as => :text, input_html: { :style=> 'height: 7rem;'} %>
     </div>
     <div>
       </br>
       <%= f.button :submit, 'إرسال', :class=> "btn wave-effect" %>
     </div>
-    </div>
+  </div>
   <% end %>
 </div>

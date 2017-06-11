@@ -1,36 +1,40 @@
-                      <% if gist.id == active %>
-                       <div class="last-gist">
-                           <h5 class="last-gist-title active-gist">
-                               <%= link_to gist.title, gist_path(gist), remote: true %>
-                           </h5>
-                           <div class="comment-files-count">
-                               <i class="zmdi zmdi-comments"><%= gist.comments.size %></i>
-                               <i class="zmdi zmdi-file"><%= gist.snippets.size  %></i>
-                           </div>
-                           <div class="tags">
-                              <%= render gist.tags %>
-                           </div>
-                       </div>
-                       <% else %>
-                        <div class="last-gist">
-                           <h5 class="last-gist-title">
-                               <%= link_to gist.title, gist_path(gist), remote: true %>
-                           </h5>
-                           <div class="comment-files-count">
-                               <i class="zmdi zmdi-comments"><%= gist.comments.size %></i>
-                               <i class="zmdi zmdi-file"><%= gist.snippets.size  %></i>
-                           </div>
-                           <div class="tags">
-                              <%= render gist.tags %>
-                           </div>
-                       </div>
-                       <% end %>
+<% if gist.id == active %>
+<div class="last-gist">
+  <h5 class="last-gist-title active-gist">
+      <%= link_to gist.title, gist_path(gist), remote: true %>
+  </h5>
+  <div class="comment-files-count">
+    <i class="zmdi zmdi-comments"><%= gist.comments.size %></i>
+    <i class="zmdi zmdi-file"><%= gist.snippets.size  %></i>
+  </div>
+  <div class="tags">
+    <%= render gist.tags %>
+  </div>
+</div>
+<% else %>
+<div class="last-gist">
+  <h5 class="last-gist-title">
+      <%= link_to gist.title, gist_path(gist), remote: true %>
+  </h5>
+  <div class="comment-files-count">
+      <i class="zmdi zmdi-comments">
+        <%= gist.comments.size %>
+      </i>
+      <i class="zmdi zmdi-file">
+        <%= gist.snippets.size  %>
+      </i>
+  </div>
+  <div class="tags">
+    <%= render gist.tags %>
+  </div>
+</div>
+<% end %>
 
-                       <script type="text/javascript">
-                         $(".last-gist-title").on("click", function() {
-                                $('.last-gist-title').removeClass('active-gist');
-                                $(this).addClass('active-gist');
-                                $('.last-gists').scrollTo(this);
-                            })
-                       </script>
+<script type="text/javascript">
+  $(".last-gist-title").on("click", function() {
+    $('.last-gist-title').removeClass('active-gist');
+    $(this).addClass('active-gist');
+    $('.last-gists').scrollTo(this);
+  })
+</script>
                       

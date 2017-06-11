@@ -1,4 +1,14 @@
-<%= render 'gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
+<% unless @gists.empty? %>
+	<%= render 'gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
+<% else %>
+	<div class="container">
+		<div class="row">
+			<div class="col l6 pull-l4 s12">
+				<h4>لم يقم أحد بإنشاء جوهر بعد!</h4>
+			</div>
+		</div>
+	</div>
+<% end %>
 
 <script type="text/javascript">
   $('.snippets').each(function() {

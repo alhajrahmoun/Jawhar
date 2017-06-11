@@ -18,13 +18,12 @@
 //= require select2.full.min
 //= require cocoon
 //= require codemirror
-//= require ahoy
 //= require rails.validations
 
 $(document).ready(function() {
     $("#owner a.add_fields").
-      data("association-insertion-method", 'after').
-      data("association-insertion-node", 'this');
+      data('association-insertion-method', 'after').
+      data('association-insertion-node', 'this');
 });
 
 

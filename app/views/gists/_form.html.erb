@@ -1,13 +1,12 @@
 <%= form_for @gist, validate: true do |f|%>
 <div class="container">
-	
 	<div class="input-field col s6">
-        <%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
+    	<%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
         <label for="gist_title" class="message active" style="font-size: 14px; color: red;"></label>
     </div>
 
     <div class="input-field col s6">
-        <%= f.text_area :description, placeholder: 'وصف الجوهر', class: 'materialize-textarea' %>
+    	<%= f.text_area :description, placeholder: 'وصف الجوهر', class: 'materialize-textarea' %>
     </div>
 	
 	<div id="snippets">
@@ -38,12 +37,6 @@
 
 
 <script type="text/javascript">
-	// $('#tags').tagsInput({
-	// 	'height':'90px',
-	//    	'width':'100%',
-	//    	'interactive':true,
-	//    	'defaultText':'ضِف وسماً '
-	// });
 	$(".tags").select2({
 	  tags: true,
 	  language: "ar",

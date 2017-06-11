@@ -1,76 +1,76 @@
-                      <%= javascript_include_tag Ckeditor.cdn_url %>
-                        <div class="gist-head">
-                           <div class="heading">
-                                 <h5><%= gist.title %></h5> 
-                           </div>
-                            <div class="gist-tools">
-                            <% if policy(gist).edit? %>
-                               <%= link_to edit_gist_path(gist), class: 'edit' do %>
-                                <i class="zmdi zmdi-edit tooltip">
-                                   <span class="tooltiptext">تعديل</span>
-                                </i>
-                              <% end %>
-                            <% end %> 
+<%= javascript_include_tag Ckeditor.cdn_url %>
+<div class="gist-head">
+  <div class="heading">
+    <h5><%= gist.title %></h5> 
+  </div>
+  <div class="gist-tools">
+  <% if policy(gist).edit? %>
+    <%= link_to edit_gist_path(gist), class: 'edit' do %>
+      <i class="zmdi zmdi-edit tooltip">
+          <span class="tooltiptext">تعديل</span>
+      </i>
+    <% end %>
+  <% end %> 
                             
-                            <%= link_to gist_path(gist), remote: true , class: 'link' do %>
-                                <i class="zmdi zmdi-link tooltip">
-                                  <span class="tooltiptext">رابط</span>
-                                </i>
-                            <% end %>  
-                                <a class="share" href="#"><i class="zmdi zmdi-share"></i></a>
-                            </div>
-                            <div class="coder-link">
-                                صاحب الجوهر :
-                                <%= link_to owner(gist), user_path(gist.user) %>
-                             </div>
-                             <div class="coder-link" style="border-left: none">
-                                منذ <%= time_ago_in_words(gist.created_at) %>
-                             </div>
-                        </div>
-                        <div class="files">
-                        <%= text_area_tag 'description', gist.description, class: 'materialize-textarea', readonly: true %>
+    <%= link_to gist_path(gist), remote: true , class: 'link' do %>
+      <i class="zmdi zmdi-link tooltip">
+        <span class="tooltiptext">رابط مباشر</span>
+      </i>
+    <% end %>  
+  </div>
 
-                          <% gist.snippets.each do |snippet| %>
-                            <div class="file" style="direction: ltr">
-                              <section id="presintaion" class="Gist-pres">
-                                <form class="col s12">
-                                  <div class="row">
-                                    <div class="file-gist-code">
-                                       <div class="col s12">
-                                            <div class="gist-head">
-                                                <div class="input-field col l3 pull-l9 m6 s10">
-                                                     <%= text_field_tag 'file', snippet.name, readonly: true, class: 'fileName' %> 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s12">
-                                           <div class="contianer">
-                                            <%= text_area_tag 'snippet', snippet.code, class: 'snippets'%> 
-                                           </div>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </form>
-                        </section>  
-                            </div> 
-                          <% end %>
+  <div class="coder-link">
+    صاحب الجوهر :
+    <%= link_to owner(gist), user_path(gist.user) %>
+  </div>
 
+  <div class="coder-link" style="border-left: none">
+    منذ <%= time_ago_in_words(gist.created_at) %>
+  </div>
+</div>
 
-                        </div>
-                        <br />
-                        <h5>قم بإضافة تعليق</h5>
-                         <div class="add-comments">
-                        <%= form_for Comment.new, :url => comments_path(@comment), remote: true do |f|%>
-                          <%= f.hidden_field :gist_id, value: gist.id %>
-                          <%= f.cktext_area :content %>
-                          <div class="add waves-effect waves-light btn">
-                          <i class="zmdi zmdi-comment"></i>
-                            <%= f.submit "إدراج التعليق", class: 'create-comment', data_disable_with: 'جاري إدراج التعليق' %>
-                          </div>
-                        <% end %>
-                        </div>
-                        <div class="comments">
-                        <% gist.comments.each do |comment| %>
-                                <%= render 'comments/comment', comment: comment %>
-                        <% end %>
-                        </div>
+<div class="files">
+  <%= text_area_tag 'description', gist.description, class: 'materialize-textarea', readonly: true %>
+  <% gist.snippets.each do |snippet| %>
+    <div class="file" style="direction: ltr">
+    <section id="presintaion" class="Gist-pres">
+      <form class="col s12">
+        <div class="row">
+          <div class="file-gist-code">
+              <div class="col s12">
+                  <div class="gist-head">
+                      <div class="input-field col l3 pull-l9 m6 s10">
+                            <%= text_field_tag 'file', snippet.name, readonly: true, class: 'fileName' %> 
+                      </div>
+                  </div>
+              </div>
+              <div class="col s12">
+                  <div class="contianer">
+                  <%= text_area_tag 'snippet', snippet.code, class: 'snippets'%> 
+                  </div>
+              </div>
+          </div>
+        </div>
+      </form>
+    </section>  
+    </div> 
+  <% end %>
+</div>
+<br />
+
+<h5>قم بإضافة تعليق</h5>
+<div class="add-comments">
+  <%= form_for Comment.new, :url => comments_path(@comment), remote: true do |f|%>
+    <%= f.hidden_field :gist_id, value: gist.id %>
+    <%= f.cktext_area :content %>
+    <div class="add waves-effect waves-light btn">
+      <i class="zmdi zmdi-comment"></i>
+      <%= f.submit "إدراج التعليق", class: 'create-comment', data_disable_with: 'جاري إدراج التعليق' %>
+    </div>
+  <% end %>
+</div>
+<div class="comments">
+  <% gist.comments.each do |comment| %>
+    <%= render 'comments/comment', comment: comment %>
+  <% end %>
+</div>

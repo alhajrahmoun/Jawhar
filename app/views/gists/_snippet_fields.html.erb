@@ -1,29 +1,29 @@
 <div class="nested-fields">
 <section id="presintaion" class="Gist-pres">
     <div class="container">
-    <div class="row">
-        <div class="col s12">
-          <div class="row">
-            <div class="file-gist-code">
-               <div class="col s12">
-                    <div class="gist-head">
-                        <div class="input-field col l3 pull-l9 m6 s10">
-                             <%= f.text_field :name, placeholder: 'اسم الملف', class: 'fileName' %>   
-                        </div>
-                        <div class="col l3 pull-l3 m6 s10" style="margin-top: 15px">
-                          <label for="gist_snippets_attributes_<%= f.object_name[-21..-1][/\[.*?\]/].tr('[]','') %>_name" class="message active" style="font-size: 14px; color: red;"></label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12">
-                   <div class="contianer">
-                    <%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
-                   </div>
-                </div>
+      <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class="file-gist-code">
+                 <div class="col s12">
+                      <div class="gist-head">
+                          <div class="input-field col l3 pull-l9 m6 s10">
+                               <%= f.text_field :name, placeholder: 'اسم الملف', class: 'fileName' %>   
+                          </div>
+                          <div class="col l3 pull-l3 m6 s10" style="margin-top: 15px">
+                            <label for="gist_snippets_attributes_<%= f.object_name[-21..-1][/\[.*?\]/].tr('[]','') %>_name" class="message active" style="font-size: 14px; color: red;"></label>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col s12">
+                     <div class="contianer">
+                      <%= f.text_area :code, data:{val: f.object_name[-21..-1][/\[.*?\]/]}, class: "snippets" %>
+                     </div>
+                  </div>
+              </div>
             </div>
+            <%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect', data: {confirm: "هل أنت متأكد؟"} %>
           </div>
-          <%= link_to_remove_association 'حذف الملف', f, class: 'remove_fields existing btn wave-effect', data: {confirm: "هل أنت متأكد؟"} %>
-        </div>
       </div>
     </div>
 </section>
@@ -31,12 +31,11 @@
 
 <script type="text/javascript">
 	var value = $('.snippets').last().data('val');
-    $('#gist_snippets_attributes_'+value+'_code').each(function() {
+  $('#gist_snippets_attributes_'+value+'_code').each(function() {
 		var editor = CodeMirror.fromTextArea(this, {
 		        lineNumbers : true,
 		        matchBrackets : true
 		    });
 		});
   $("#new_gist").enableClientSideValidations();
-    
 </script>
