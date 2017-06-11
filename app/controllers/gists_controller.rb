@@ -62,7 +62,7 @@ class GistsController < ApplicationController
 
   private
   def gist_params
-    params.require(:gist).permit(:title, :description, :tag_list, snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
+    params.require(:gist).permit(:title, :description, tag_list: [], snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
   end
 
   def find_gist

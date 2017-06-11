@@ -21,8 +21,9 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="input-field col l8 pull-l2 s12">
-	        <%= f.select :tag_list, @gist.tags, {prompt: 'ضِف وسوماً للجوهر (افصل بين الوسوم المضافة بفاصلة مثل [ جوهر, تجربة ] )'},{class: 'tags'} %>
+		<div class="col l8 pull-l2 s12">
+			<label class="message" style="font-size: 16px; color: black;">ضع وسوماً للجوهر</label>
+	        <%= f.select :tag_list, @gist.tags, {prompt: 'اكتب الوسم المطلوب ثم اضغط enter'}, multiple: true, class: 'tags' %>
 	    </div>
     </div>
 	
