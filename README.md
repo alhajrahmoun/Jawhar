@@ -6,8 +6,13 @@ we'll be using:
 
 * Ruby 2.4.0 with Rails 5.0.2
 
-* Postgresql 9.6
+* Postgresql 9.6 
+
+* CodeMirror
+
+* CKEditor
+
 
 ----------------------------------
 
-##working in progress .......
+##Deployment in progress .......
