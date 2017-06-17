@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :notifications
 
+  validates :first_name, presence: { message: "الرجاء إضافة الاسم" }
+  validates :last_name, presence: { message: "الرجاء إضافة الكنية" }
+
   before_create do 
     self.admin = false
   end
