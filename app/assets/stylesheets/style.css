@@ -39,6 +39,7 @@ nav ul#nav-mobile {
 }
 nav ul#nav-mobile li {
     font-family: 'Cairo', sans-serif;
+    float: inherit;
 }
 nav ul#nav-mobile li a {
     color: #D9CB9E;
