@@ -11,9 +11,6 @@
 <% else %>
 		<li><%= link_to "تسجيل الخروج", destroy_user_session_path, method: :delete %></li>
 		<li><%= link_to "راسلنا", new_contact_path %></li>
-		<% if current_user.admin?%>
-			<li><%= link_to "لوحة تحكم الإدارة", admin_root_path %></li>
-		<% end %>
 		<li><%= link_to "التنبيهات #{Notification.get_unread_count(current_user.id)}", notifications_path %></li>
 		<li><%= link_to "اكتشف", explore_gists_path %></li>
 		<li><%= link_to "إضافة جوهر جديد", new_gist_path %></li>
