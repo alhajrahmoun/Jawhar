@@ -4,7 +4,7 @@
 			<ul class="notification-index-list">
 				<% unless @notifications.empty? %>
 					<% @notifications.each do |notification|%>
-					<li> <% unless notification.read? %> (<i> جديد</i>) || <% end %> قام <%= full_name(notification.commenter) %> بالتعليق على  <%= link_to 'الجوهر', link_notification_path(notification) %> منذ <%= time_ago_in_words(notification.created_at) %></li>
+					<li> <% unless notification.read? %> (<i> جديد</i>) || <% end %> قام <%= full_name(notification.commenter) %> بالتعليق على الجوهر <%= link_to notification.gist.title , link_notification_path(notification) %> منذ <%= time_ago_in_words(notification.created_at) %> | <%= link_to "تعيين كمقروء", make_as_read_notification_path(notification)%></li>
 					<% end %>
 				<% else %>
 					<div class="container">

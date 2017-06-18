@@ -11,9 +11,6 @@ class User < ApplicationRecord
   validates :first_name, presence: { message: "الرجاء إضافة الاسم" }
   validates :last_name, presence: { message: "الرجاء إضافة الكنية" }
 
-  before_create do 
-    self.admin = false
-  end
 
   def self.active_users
   	count = 0

@@ -41,6 +41,13 @@ nav ul#nav-mobile li {
     font-family: 'Cairo', sans-serif;
     float: inherit;
 }
+
+nav ul#nav-mobile li .notification{
+    font-family: 'Cairo', sans-serif;
+    float: inherit;
+    background: #dc3522;
+}
+
 nav ul#nav-mobile li a {
     color: #D9CB9E;
 }

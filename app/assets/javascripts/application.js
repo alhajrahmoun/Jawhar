@@ -19,6 +19,7 @@
 //= require cocoon
 //= require codemirror
 //= require rails.validations
+//= require overhang.min
 
 $(document).ready(function() {
     $("#owner a.add_fields").

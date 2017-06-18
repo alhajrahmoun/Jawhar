@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :notifications do 
     member do 
       get :link
+      get :make_as_read
     end
   end
   resources :tags, only: [:index, :show]

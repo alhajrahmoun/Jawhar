@@ -1,2 +1,8 @@
 $('.comments').append("<%= escape_javascript(render 'comments/comment', comment: @comment) %>");
-$('#cke_1_contents').html("");
+for (instance in CKEDITOR.instances){
+   CKEDITOR.instances[instance].setData(" ");
+}
+$("body").overhang({
+  type: "success",
+  message: "تم إضافة التعليق بنجاح!"
+});
