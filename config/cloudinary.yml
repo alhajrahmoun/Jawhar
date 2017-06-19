@@ -1,0 +1,19 @@
+
+development:
+  cloud_name: dvohopx6e
+  api_key: '326714638696528'
+  api_secret: AFs1eh2qN7MmX_qCTdtwc5sbhHg
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dvohopx6e
+  api_key: '326714638696528'
+  api_secret: AFs1eh2qN7MmX_qCTdtwc5sbhHg
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dvohopx6e
+  api_key: '326714638696528'
+  api_secret: AFs1eh2qN7MmX_qCTdtwc5sbhHg
+  enhance_image_tag: true
+  static_image_support: false
