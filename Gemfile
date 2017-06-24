@@ -53,6 +53,10 @@ gem 'groupdate'
 gem 'mail_form'
 gem 'client_side_validations'
 
+gem 'newrelic_rpm'
+gem 'rollbar'
+gem 'oj'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

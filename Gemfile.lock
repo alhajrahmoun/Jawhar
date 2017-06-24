@@ -139,9 +139,11 @@ GEM
     minitest (5.10.2)
     multi_json (1.12.1)
     netrc (0.11.0)
+    newrelic_rpm (4.2.0.334)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    oj (3.2.0)
     orm_adapter (0.5.0)
     pg (0.20.0)
     pg_search (2.0.1)
@@ -209,6 +211,8 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rollbar (2.15.0)
+      multi_json
     ruby_dep (1.5.0)
     sass (3.4.24)
     sass-rails (5.0.6)
@@ -275,6 +279,8 @@ DEPENDENCIES
   listen (~> 3.1)
   mail_form
   mini_magick
+  newrelic_rpm
+  oj
   pg (~> 0.18)
   pg_search
   puma (~> 3.0)
@@ -282,6 +288,7 @@ DEPENDENCIES
   rails (~> 5.0.2)
   rails_12factor
   rails_db
+  rollbar
   sass-rails (~> 5.0)
   simple_form
   turbolinks (~> 5)
