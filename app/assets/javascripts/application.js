@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require materialize.min
 //= require custom.js
-//= require ckeditor/init
 //= require select2.full.min
 //= require cocoon
 //= require codemirror
