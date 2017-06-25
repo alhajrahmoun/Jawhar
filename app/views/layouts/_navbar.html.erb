@@ -8,6 +8,7 @@
 		<i class="zmdi zmdi-account"></i>
 	<% end %>
 	<li><%= link_to "راسلنا", new_contact_path %></li>
+	<li><%= link_to "اشتر لنا نسكافيه", 'https://ko-fi.com/A030287K' %></li>
 <% else %>
 		<li><%= link_to "جوهري", gists_path %></li>
 		<li><%= link_to "اكتشف", explore_gists_path %></li>
@@ -19,5 +20,6 @@
 			<li><%= link_to "التنبيهات (#{notification_count})", notifications_path, class: 'notification' %></li>
 		<% end %>
 		<li><%= link_to "راسلنا", new_contact_path %></li>
+		<li><%= link_to "اشتر لنا نسكافيه", 'https://ko-fi.com/A030287K' %></li>
 		<li><%= link_to "تسجيل الخروج", destroy_user_session_path, method: :delete %></li>
 <% end %>

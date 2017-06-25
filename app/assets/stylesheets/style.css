@@ -51,9 +51,7 @@ nav ul#nav-mobile li .notification{
 nav ul#nav-mobile li a {
     color: #D9CB9E;
 }
-nav ul#nav-mobile a.btn-large.signup {
-    background: #D9CB9E;
-}
+
 nav ul#nav-mobile a.btn-large.signup:hover {
     background: #D9CB9E;
 }
@@ -64,7 +62,7 @@ nav ul#nav-mobile a.btn-large {
     height: 40px;
     font-family: 'Cairo', sans-serif;
     font-size: 0.9rem;
-    background: #DC3522;
+    background: #333;
 }
 nav ul#nav-mobile a.btn-large:hover {
     background: #DC3522;
@@ -153,7 +151,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     z-index: 100;
     width: 100%;
     height: 1000px;
-    background: rgba(55, 65, 64, .8);
+    background: #333;
 }
 .signIn .sign-in-close {
     float: right;
