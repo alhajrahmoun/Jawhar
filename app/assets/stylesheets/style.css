@@ -52,6 +52,10 @@ nav ul#nav-mobile li a {
     color: #D9CB9E;
 }
 
+nav ul#nav-mobile a.btn-large.signup {
+    background: #D9CB9E;
+}
+
 nav ul#nav-mobile a.btn-large.signup:hover {
     background: #D9CB9E;
 }
@@ -62,7 +66,7 @@ nav ul#nav-mobile a.btn-large {
     height: 40px;
     font-family: 'Cairo', sans-serif;
     font-size: 0.9rem;
-    background: #333;
+    background: #DC3522;
 }
 nav ul#nav-mobile a.btn-large:hover {
     background: #DC3522;
@@ -293,9 +297,6 @@ section.Gist-pres .file-gist-code .gist-head .fileName:-moz-placeholder { /* Fir
 
 }
 /* Features Section */
-section#features {
-    margin-top: 100px;
-}
 section#features .feature1 h4,
 section#features .feature2 h4 {
     margin-top: 10rem;
@@ -315,9 +316,6 @@ section#features .feature2 img  {
     height: auto;
 }
 /* Creators */
-section#creators {
-    margin-top: 100px;
-}
 section#creators .head {
     margin: 80px 0px;
     font-family: 'Cairo', sans-serif;
