@@ -1,4 +1,7 @@
 ar:
+  simple_form:
+    error_notification:
+      user: "الرجاء التأكد من صحة الحقول التالية:"
   devise:
     confirmations:
       confirmed: "تمّ تأكيد حسابك بنجاح."

@@ -10,6 +10,13 @@ class User < ApplicationRecord
 
   validates :first_name, presence: { message: "الرجاء إضافة الاسم" }
   validates :last_name, presence: { message: "الرجاء إضافة الكنية" }
+  validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, message: 'الرجاء إدخال ايميل صحيح'}
+  validates_integrity_of :avatar
+ 
+  after_create :send_welcome_mail
+  def send_welcome_mail
+    ModelMailer.mail_to(self.email).deliver
+  end
 
 
   def self.active_users
