@@ -57,12 +57,11 @@ Rails.application.configure do
   config.i18n.default_locale = :ar
 
   config.action_mailer.delivery_method = :smtp
-
   config.action_mailer.smtp_settings = {
-       :address => "smtp.gmail.com",
+       :address => "smtp.mailgun.org",
        :port => 587,
-       :user_name => "mhdhajrahmoun@gmail.com",
-       :password => "TransPorter",
+       :user_name => "postmaster@www.jawhar.us",
+       :password => "028623df553b639dbeba69b15473bbc9",
        :authentication => :plain,
        :enable_starttls_auto => true
   }
