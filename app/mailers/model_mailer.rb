@@ -7,8 +7,7 @@ class ModelMailer < ApplicationMailer
   #
   default from: "info@jawhar.us"
 
-  def mail(user_id)
-  	user_email = User.find(user_id).email
+  def mail_to(user_email)
     mail to: user_email, subject: "شكراً لانضمامكم إلى جوهر"
   end
 end
