@@ -190,7 +190,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 .signIn form input[type="text"] {
     padding-top: 40px;
 }
-.signIn .waves-effect.waves-light.btn-large.waves-input-wrapper {
+.signIn .btn-large.waves-input-wrapper {
     width: 100%;
     background: #DC3522;
 }
@@ -682,4 +682,15 @@ input:-moz-placeholder, textarea:-moz-placeholder { /* Firefox 18- */
     background-color: #fafafa;
     padding: 1em;
   }
+}
+
+/* contact us page */
+.input-field label {
+    color: #060606;
+    padding-bottom: 4px;
+}
+
+.input-field label.active {
+    color: #060606;
+    padding-bottom: 8px;
 }
