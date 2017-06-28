@@ -91,8 +91,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
        :address => "smtp.mailgun.org",
        :port => 587,
-       :user_name => "postmaster@www.jawhar.us",
-       :password => "028623df553b639dbeba69b15473bbc9",
+       :user_name => ENV['MAILGUN_USERNAME'],
+       :password => ENV['MAILGUN_PASSWORD'],
        :authentication => :plain,
        :enable_starttls_auto => true
   }

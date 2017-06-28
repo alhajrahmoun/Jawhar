@@ -55,15 +55,4 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   config.i18n.default_locale = :ar
-
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-       :address => "smtp.mailgun.org",
-       :port => 587,
-       :user_name => "postmaster@www.jawhar.us",
-       :password => "028623df553b639dbeba69b15473bbc9",
-       :authentication => :plain,
-       :enable_starttls_auto => true
-  }
-
 end

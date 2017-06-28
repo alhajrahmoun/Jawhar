@@ -1,19 +1,18 @@
-
 development:
-  cloud_name: dvohopx6e
-  api_key: '326714638696528'
-  api_secret: AFs1eh2qN7MmX_qCTdtwc5sbhHg
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: dvohopx6e
-  api_key: '326714638696528'
-  api_secret: AFs1eh2qN7MmX_qCTdtwc5sbhHg
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_image_support: true
 test:
-  cloud_name: dvohopx6e
-  api_key: '326714638696528'
-  api_secret: AFs1eh2qN7MmX_qCTdtwc5sbhHg
+  cloud_name: <%= ENV['CLOUDINARY_CLOUD_NAME'] %>
+  api_key: <%= ENV['CLOUDINARY_API_KEY'] %>
+  api_secret: <%= ENV['CLOUDINARY_API_SECRET'] %>
   enhance_image_tag: true
   static_image_support: false
