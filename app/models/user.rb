@@ -15,7 +15,7 @@ class User < ApplicationRecord
  
   after_create :send_welcome_mail
   def send_welcome_mail
-    ModelMailer.mail_to(self.email).deliver
+    ModelMailer.mail_to(self.email).deliver if Rails.env.production?
   end
 
 

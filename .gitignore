@@ -21,3 +21,5 @@
 /config/cloudinary.yml
 
 public/uploads/tmp/
+.env
+/.idea
