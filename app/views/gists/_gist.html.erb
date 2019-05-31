@@ -46,7 +46,13 @@
               </div>
               <div class="col s12">
                   <div class="contianer">
-                  <%= text_area_tag 'snippet', snippet.code, class: 'snippets'%> 
+                      <% if snippet.highlighted_code.present? %>
+                        <%= raw snippet.highlighted_code %>
+                      <% else %>
+                      <div class="code_block">
+                        <pre><%= snippet.code %></pre>
+                      </div>
+                      <% end %>
                   </div>
               </div>
           </div>
