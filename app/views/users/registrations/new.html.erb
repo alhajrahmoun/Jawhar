@@ -1,9 +1,12 @@
 <section class="signUp">
     <div class="container">
      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'col s12'}) do |f| %>
-      <div class="input-field col l6 s12">
-        <%= f.error_notification %>
-      </div> 
+      <div class="row">
+        <div style="float: right;">
+          <%= f.error_notification %>
+          <br>
+        </div>
+      </div>
       <div class="row">
         <div class="input-field col l6 s12">
         <%= f.input :first_name, label: "الاسم", class: 'validate' %>
@@ -43,9 +46,9 @@
       
       <div class="signUp-submit">
          <div class="col s12">
-         <%= f.button :submit, "تسجيل", class: 'btn waves-effect waves-light' %>
+            <%= f.button :submit, "تسجيل", class: 'btn waves-effect waves-light' %>
          </div>
-           <% end %>
+      <% end %>
       </div>
     </div>
 </section>
