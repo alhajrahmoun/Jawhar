@@ -48,16 +48,10 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'rails_12factor'
 gem 'pundit'
 gem 'pg_search'
-gem 'chartkick'
-gem 'groupdate'
 gem 'mail_form'
 gem 'client_side_validations'
-
-gem 'rollbar'
 gem 'sidekiq'
-
 gem 'mailgun-ruby'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
