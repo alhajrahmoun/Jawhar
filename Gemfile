@@ -38,13 +38,10 @@ gem 'turbolinks', '~> 5'
 
 gem 'devise'
 gem 'simple_form'
-gem 'mini_magick'
-gem 'carrierwave'
 gem 'cloudinary'
 gem 'acts-as-taggable-on'
 gem 'cocoon'
 gem 'codemirror-rails'
-gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'rails_12factor'
 gem 'pundit'
 gem 'pg_search'
@@ -52,6 +49,8 @@ gem 'mail_form'
 gem 'client_side_validations'
 gem 'sidekiq'
 gem 'mailgun-ruby'
+gem "image_processing", ">= 1.2"
+gem 'ruby-vips', '~> 2.1', '>= 2.1.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,3 +67,6 @@ group :development do
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
+gem "jsbundling-rails", "~> 1.0"
+
+gem "cssbundling-rails", "~> 1.1"

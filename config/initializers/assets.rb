@@ -2,11 +2,6 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = "1.0"
-Rails.application.config.assets.precompile += %w(ckeditor/)
-Rails.application.config.assets.precompile += %w(jquery.tagsinput.min.js)
-Rails.application.config.assets.precompile += %w(jquery.tagsinput.min.css)
-Rails.application.config.assets.precompile += %w( admin.css )
-Rails.application.config.assets.precompile += %w( admin.js )
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path

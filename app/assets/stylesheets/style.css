@@ -677,11 +677,12 @@ input:-moz-placeholder, textarea:-moz-placeholder { /* Firefox 18- */
 .notification-index-list {
   margin-top: 5em;
   list-style: none;
-  li {
+}
+
+.notification-index-list li {
     margin-top: 1em;
     background-color: #fafafa;
     padding: 1em;
-  }
 }
 
 /* contact us page */

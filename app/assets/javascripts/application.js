@@ -10,20 +10,5 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require materialize.min
-//= require custom.js
-//= require select2.full.min
-//= require cocoon
-//= require codemirror
-//= require rails.validations
-//= require overhang.min
-
-$(document).ready(function() {
-    $("#owner a.add_fields").
-      data('association-insertion-method', 'after').
-      data('association-insertion-node', 'this');
-});
 
 

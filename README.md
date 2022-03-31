@@ -9,5 +9,3 @@ we'll be using:
 * Postgresql 9.6 
 
 * CodeMirror
-
-* CKEditor
