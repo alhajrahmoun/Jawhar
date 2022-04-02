@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@client-side-validations/client-side-validations/-/client-side-validations-0.3.0.tgz#0cdfe1ddd3e4388c38a48efde1aa70d3e646c28d"
   integrity sha512-UVCpiqU8YDO/jPkNFEzyDpyCatoMZfo43RrzATFe4JERnirONODuFqdaN6y5CfjeaxU5sMjLIdpcensR1zhLCA==
 
+"@hotwired/stimulus@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.0.1.tgz#141f15645acaa3b133b7c247cad58ae252ffae85"
+  integrity sha512-oHsJhgY2cip+K2ED7vKUNd2P+BEswVhrCYcJ802DSsblJFv7mPFVk3cQKvm2vHgHeDVdnj7oOKrBbzp1u8D+KA==
+
 "@rails/actiontext@^7.0.2-2":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@rails/actiontext/-/actiontext-7.0.2.tgz#800872528ded740c0a1d8ce68d79f0e214168d09"
@@ -282,6 +287,11 @@ sass@^1.49.10:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
     source-map-js ">=0.6.2 <2.0.0"
+
+select2@^4.1.0-rc.0:
+  version "4.1.0-rc.0"
+  resolved "https://registry.yarnpkg.com/select2/-/select2-4.1.0-rc.0.tgz#ba3cd3901dda0155e1c0219ab41b74ba51ea22d8"
+  integrity sha512-Hr9TdhyHCZUtwznEH2CBf7967mEM0idtJ5nMtjvk3Up5tPukOLXbHUNmh10oRfeNIhj+3GD3niu+g6sVK+gK0A==
 
 "source-map-js@>=0.6.2 <2.0.0":
   version "1.0.2"

@@ -11,6 +11,7 @@ import 'materialize-css/dist/js/materialize.min'
 
 import "trix"
 import "@rails/actiontext"
+import "./controllers"
 
 $(document).ready(function() {
     $("#owner a.add_fields").
