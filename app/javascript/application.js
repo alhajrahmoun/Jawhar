@@ -3,7 +3,7 @@ import "./jquery"
 import Rails from '@rails/ujs';
 
 Rails.start();
-
+import './codemirror'
 import "jquery-ui-dist/jquery-ui.min"
 import "overhang/dist/overhang.min"
 import '@client-side-validations/client-side-validations/src'
@@ -30,5 +30,12 @@ $( document ).ready(function(){
     $(".close").click(function () {
         $(".box-search").fadeOut(500);
         $("body").css("overflow","scroll");
+    });
+    $('.snippets-readonly').each(function() {
+        CodeMirror.fromTextArea(this, {
+            lineNumbers: true,
+            matchBrackets: true,
+            readOnly: true
+        });
     });
 });

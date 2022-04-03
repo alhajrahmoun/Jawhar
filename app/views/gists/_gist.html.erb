@@ -49,7 +49,7 @@
                         <%= raw snippet.highlighted_code %>
                       <% else %>
                       <div class="code_block">
-                        <pre><%= snippet.code %></pre>
+                        <%= text_area_tag 'snippet', snippet.code, class: 'snippets-readonly'%>
                       </div>
                       <% end %>
                   </div>

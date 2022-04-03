@@ -33,5 +33,12 @@
 </div>
 
 <script type="text/javascript">
+    let value = $('.snippets').last().data('val');
+    $('#gist_snippets_attributes_'+value+'_code').each(function() {
+        CodeMirror.fromTextArea(this, {
+            lineNumbers : true,
+            matchBrackets : true
+        });
+    });
   $("#new_gist").enableClientSideValidations();
 </script>
