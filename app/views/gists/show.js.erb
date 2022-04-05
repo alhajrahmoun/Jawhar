@@ -1,1 +1,8 @@
 $('.gist').html(" <%= escape_javascript(render 'gist', gists: @gists, gist: @gist) %>");
+$('.snippets-readonly').each(function() {
+    CodeMirror.fromTextArea(this, {
+        lineNumbers: true,
+        matchBrackets: true,
+        readOnly: true
+    });
+});

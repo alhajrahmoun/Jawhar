@@ -8,7 +8,7 @@ import "jquery-ui-dist/jquery-ui.min"
 import "overhang/dist/overhang.min"
 import '@client-side-validations/client-side-validations/src'
 import 'materialize-css/dist/js/materialize.min'
-
+import '@nathanvda/cocoon'
 import "trix"
 import "@rails/actiontext"
 import "./controllers"
