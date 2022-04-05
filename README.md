@@ -6,8 +6,4 @@ we'll be using:
 
 * Ruby 2.6.5 with Rails 6.0
 
-* Postgresql 9.6 
-
-* CodeMirror
-
-* CKEditor
+* Postgresql 9.6

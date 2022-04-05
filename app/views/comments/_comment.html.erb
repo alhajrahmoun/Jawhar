@@ -1,13 +1,13 @@
 <div class="comment">
     <div class="user-img">
-        <%= image_tag comment.user.avatar_url(:thumbnail, width: 80, height: 80)%>
+        <%= image_tag comment.user.avatar.variant(:thumb)%>
         <div class="comment-contain">
             <div class="comment-head">
                 <h4>علق <%= link_to owner(comment), user_path(comment.user) %> منذ <%= time_ago_in_words(comment.created_at) %></h4>
             </div>
 
             <div class="comment-content">
-                <p><%= raw comment.content %></p>
+                <p><%= comment.content %></p>
             </div>
         </div>
     </div>

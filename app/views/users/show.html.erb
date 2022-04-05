@@ -6,13 +6,3 @@
 		</div>
 	</div>
 <%= render 'gists/gists', gists: @gists, gist: @gists.first, active: @gists.first.id %>
-
-<script type="text/javascript">
-  $('.snippets').each(function() {
-    var editor = CodeMirror.fromTextArea(this, {
-        lineNumbers: true,
-        matchBrackets: true,
-        readOnly: true
-    });
-});
-</script>

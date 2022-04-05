@@ -23,7 +23,7 @@
 	<div class="row">
 		<div class="col l8 pull-l2 s12">
 			<label class="message" style="font-size: 16px; color: black;">ضع وسوماً للجوهر</label>
-	        <%= f.select :tag_list, @gist.tags, {prompt: 'اكتب الوسم المطلوب ثم اضغط enter'}, multiple: true, class: 'tags' %>
+	        <%= f.select :tag_list, @gist.tags, {}, multiple: true, class: 'tags', data: { controller: 'select2' } %>
 	    </div>
     </div>
 	
@@ -35,12 +35,3 @@
 	</div>
 </div>
 <% end %>
-
-
-<script type="text/javascript">
-	$(".tags").select2({
-	  tags: true,
-	  language: "ar",
-	  dir: "rtl"
-	})
-</script>
