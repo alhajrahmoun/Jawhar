@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+  before_action :authenticate_user!, unless: :pages_controller?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -17,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
     root_path
+  end
+
+  def pages_controller?
+    is_a?(PagesController)
   end
 end

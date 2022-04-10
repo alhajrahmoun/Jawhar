@@ -21,7 +21,6 @@ gem 'turbo-rails'
 
 gem 'acts-as-taggable-on'
 gem 'client_side_validations'
-gem 'cloudinary'
 gem 'cocoon'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'devise'
