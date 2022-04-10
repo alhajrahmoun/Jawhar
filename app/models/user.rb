@@ -8,17 +8,21 @@ class User < ApplicationRecord
   end
   has_many :gists, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :notifications
+  has_many :notifications, foreign_key: 'recipient_id'
 
   validates :first_name, presence: { message: "الرجاء إضافة الاسم" }
   validates :last_name, presence: { message: "الرجاء إضافة الكنية" }
   validates :email, format: {with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, message: 'الرجاء إدخال ايميل صحيح'}
 
-  after_create :send_welcome_mail
+  after_create_commit :send_welcome_mail, if: -> { Rails.env.production? }
+
   def send_welcome_mail
-    ModelMailer.mail_to(email).deliver if Rails.env.production?
+    ModelMailer.mail_to(email).deliver
   end
 
+  def unread_notifications_count
+    notifications.where(read: false).count
+  end
 
   def self.active_users
     count = 0

@@ -23,8 +23,7 @@ class GistsController < ApplicationController
   end
 
   def create
-    @gist = Gist.new(gist_params)
-    @gist.user_id = current_user.id
+    @gist = current_user.gists.new(gist_params)
     if @gist.save
       redirect_to @gist
     else
