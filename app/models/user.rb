@@ -16,15 +16,19 @@ class User < ApplicationRecord
 
   after_create :send_welcome_mail
   def send_welcome_mail
-    ModelMailer.mail_to(self.email).deliver if Rails.env.production?
+    ModelMailer.mail_to(email).deliver if Rails.env.production?
   end
 
 
   def self.active_users
-  	count = 0
-  	self.all.each do |user|
-  		count += 1 if user.last_sign_in_at > Time.zone.today - 7
-  	end
-  	count
+    count = 0
+    all.each do |user|
+      count += 1 if user.last_sign_in_at > Time.zone.today - 7
+    end
+    count
+  end
+
+  def full_name
+    [first_name, last_name].join(' ')
   end
 end

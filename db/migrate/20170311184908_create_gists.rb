@@ -1,4 +1,4 @@
-class CreateGists < ActiveRecord::Migration[5.0]
+class CreateGists < ActiveRecord::Migration[7.0]
   def change
     create_table :gists do |t|
       t.string :title

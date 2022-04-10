@@ -1,6 +1,7 @@
 class Notification < ApplicationRecord
   belongs_to :user
   belongs_to :commenter, class_name: 'User'
+  belongs_to :user
   belongs_to :gist
 
   def self.get_unread_count(user_id)
