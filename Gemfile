@@ -1,9 +1,6 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
 
 ruby '3.0.3'
 
@@ -21,7 +18,6 @@ gem 'turbo-rails'
 
 gem 'acts-as-taggable-on'
 gem 'client_side_validations'
-gem 'cloudinary'
 gem 'cocoon'
 gem 'cssbundling-rails', '~> 1.1'
 gem 'devise'

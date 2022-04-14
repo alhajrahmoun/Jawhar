@@ -12,7 +12,7 @@
 		<li><%= link_to "جوهري", gists_path %></li>
 		<li><%= link_to "اكتشف", explore_gists_path %></li>
 		<li><%= link_to "إضافة جوهر جديد", new_gist_path %></li>
-		<% notification_count = Notification.get_unread_count(current_user.id) %>
+		<% notification_count = current_user.unread_notifications_count %>
 		<% if notification_count.zero? %>
 			<li><%= link_to "التنبيهات (#{notification_count})", notifications_path %></li>
 		<% else %>

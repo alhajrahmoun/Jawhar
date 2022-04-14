@@ -3,7 +3,7 @@
         <%= image_tag comment.user.avatar.variant(:thumb)%>
         <div class="comment-contain">
             <div class="comment-head">
-                <h4>علق <%= link_to owner(comment), user_path(comment.user) %> منذ <%= time_ago_in_words(comment.created_at) %></h4>
+                <h4>علق <%= link_to comment.user.full_name, user_path(comment.user) %> منذ <%= time_ago_in_words(comment.created_at) %></h4>
             </div>
 
             <div class="comment-content">
