@@ -1,13 +1,18 @@
 <%= form_for @gist, validate: true do |f|%>
 <div class="container">
 	<div class="input-field col s6">
-    	<%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
-        <label for="gist_title" class="message active" style="font-size: 14px; color: red;"></label>
-    </div>
+    <%= f.text_field :title, placeholder: 'عنوان الجوهر', class: 'validate' %>
+    <label for="gist_title" class="message active" style="font-size: 14px; color: red;"></label>
+  </div>
 
-    <div class="input-field col s6">
-    	<%= f.text_area :description, placeholder: 'وصف الجوهر', class: 'materialize-textarea' %>
-    </div>
+  <div class="input-field col s6">
+    <%= f.check_box :private %>
+    <%= f.label :private, 'خاص' %>
+  </div>
+
+  <div class="input-field col s6">
+    <%= f.text_area :description, placeholder: 'وصف الجوهر', class: 'materialize-textarea' %>
+  </div>
 	
 	<div id="snippets">
 		<%= f.fields_for :snippets do |snippet| %>
@@ -23,15 +28,14 @@
 	<div class="row">
 		<div class="col l8 pull-l2 s12">
 			<label class="message" style="font-size: 16px; color: black;">ضع وسوماً للجوهر</label>
-	        <%= f.select :tag_list, @gist.tags, {}, multiple: true, class: 'tags', data: { controller: 'select2' } %>
-	    </div>
+      <%= f.select :tag_list, @gist.tags, {}, multiple: true, class: 'tags', data: { controller: 'select2' } %>
     </div>
-	
+  </div>
 
 	<div class="row">
 		<div class="col l8 pull-l2 s10 pull-s1">
-	<%= f.submit "حفظ", class: 'update-gist btn wave-effect' %>
+	    <%= f.submit "حفظ", class: 'update-gist btn wave-effect' %>
 		</div>
-	</div>
+  </div>
 </div>
 <% end %>

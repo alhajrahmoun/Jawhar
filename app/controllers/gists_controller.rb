@@ -61,7 +61,7 @@ class GistsController < ApplicationController
 
   private
   def gist_params
-    params.require(:gist).permit(:title, :description, tag_list: [], snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
+    params.require(:gist).permit(:title, :description, :private, tag_list: [], snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
   end
 
   def find_gist
@@ -73,6 +73,6 @@ class GistsController < ApplicationController
   end
 
   def explore_gists
-    @gists = Gist.where.not(user_id: current_user.id).includes(:tags, :snippets, comments: :user).order('created_at DESC')
+    @gists = Gist.public_gists.where.not(user_id: current_user.id).includes(:tags, :snippets, comments: :user).order('created_at DESC')
   end
 end
