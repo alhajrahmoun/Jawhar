@@ -12,13 +12,27 @@ class Gist < ApplicationRecord
 
 	accepts_nested_attributes_for :snippets, allow_destroy: true, reject_if: :all_blank
 
+	before_validation :generate_slug, on: :create
+
 	validates :title, presence: { message: "الرجاء إضافة عنوان للجوهر" }
+	validates :slug, presence: true
 
 	validate do
 		errors.add(:base, :snippets_too_short, count: SNIPPETS_COUNT_MIN) unless snippets_count_valid?
 	end
 
-	private 
+	def short_url
+		Rails.application.routes.url_helpers.short_url(slug: self.slug)
+	end
+
+	private
+	def generate_slug
+		loop do
+			self.slug = SecureRandom.uuid[0..4]
+			break unless self.class.where(slug: self.slug).any?
+		end
+	end
+
 	def snippets_count_valid?
 		snippets.reject(&:marked_for_destruction?).count >= SNIPPETS_COUNT_MIN
 	end

@@ -11,7 +11,7 @@
     <% end %>
   <% end %> 
                             
-    <%= link_to gist_path(gist), target: '_blank', class: 'link' do %>
+    <%= link_to short_url(slug: gist.slug), target: '_blank', class: 'link' do %>
       <i class="zmdi zmdi-link tooltip">
         <span class="tooltiptext">رابط مباشر</span>
       </i>

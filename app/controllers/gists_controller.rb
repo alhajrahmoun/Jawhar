@@ -32,6 +32,8 @@ class GistsController < ApplicationController
   end
 
   def show
+    redirect_to '/404.html' if @gist.nil?
+
     if @gist.user == current_user
       find_gists
     else
@@ -65,7 +67,12 @@ class GistsController < ApplicationController
   end
 
   def find_gist
-    @gist = Gist.includes(:tags, :snippets, comments: :user).find(params[:id])
+    scope = Gist.includes(:tags, :snippets, comments: :user)
+    @gist = if params[:id]
+              scope.find_by(id: params[:id])
+            elsif params[:slug]
+              scope.find_by(slug: params[:slug])
+            end
   end
 
   def find_gists
