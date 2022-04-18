@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_10_231822) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_17_154223) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_10_231822) do
     t.bigint "user_id"
     t.integer "snippets_count", default: 0
     t.integer "comments_count", default: 0
+    t.boolean "private", default: false
     t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
