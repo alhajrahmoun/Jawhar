@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_17_165100) do
     t.bigint "user_id"
     t.integer "snippets_count", default: 0
     t.integer "comments_count", default: 0
+    t.boolean "private", default: false
     t.string "slug"
     t.index ["user_id"], name: "index_gists_on_user_id"
   end

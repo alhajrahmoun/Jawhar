@@ -12,6 +12,9 @@ class Gist < ApplicationRecord
 
 	accepts_nested_attributes_for :snippets, allow_destroy: true, reject_if: :all_blank
 
+	scope :private_gists, -> { where(private: true) }
+	scope :public_gists, -> { where(private: false) }
+
 	before_validation :generate_slug, on: :create
 
 	validates :title, presence: { message: "الرجاء إضافة عنوان للجوهر" }
