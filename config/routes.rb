@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get 'comments/new'
 
+  get 'g/:slug', to: 'gists#show', as: :short
   get 'tags/index'
   get 'tags/show'
 

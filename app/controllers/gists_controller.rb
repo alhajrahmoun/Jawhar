@@ -32,6 +32,8 @@ class GistsController < ApplicationController
   end
 
   def show
+    redirect_to '/404.html' if @gist.nil?
+
     if @gist.user == current_user
       find_gists
     else
@@ -61,11 +63,16 @@ class GistsController < ApplicationController
 
   private
   def gist_params
-    params.require(:gist).permit(:title, :description, tag_list: [], snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
+    params.require(:gist).permit(:title, :description, :private, tag_list: [], snippets_attributes: Snippet.attribute_names.map(&:to_sym) )
   end
 
   def find_gist
-    @gist = Gist.includes(:tags, :snippets, comments: :user).find(params[:id])
+    scope = Gist.includes(:tags, :snippets, comments: :user)
+    @gist = if params[:id]
+              scope.find_by(id: params[:id])
+            elsif params[:slug]
+              scope.find_by(slug: params[:slug])
+            end
   end
 
   def find_gists
@@ -73,6 +80,6 @@ class GistsController < ApplicationController
   end
 
   def explore_gists
-    @gists = Gist.where.not(user_id: current_user.id).includes(:tags, :snippets, comments: :user).order('created_at DESC')
+    @gists = Gist.public_gists.where.not(user_id: current_user.id).includes(:tags, :snippets, comments: :user).order('created_at DESC')
   end
 end
