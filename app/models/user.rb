@@ -7,6 +7,7 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_limit: [80, 80]
   end
   has_many :gists, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, foreign_key: 'recipient_id'
 

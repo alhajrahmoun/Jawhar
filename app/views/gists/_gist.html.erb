@@ -15,7 +15,21 @@
       <i class="zmdi zmdi-link tooltip">
         <span class="tooltiptext">رابط مباشر</span>
       </i>
-    <% end %>  
+    <% end %>
+
+    <% if bookmark = Bookmark.find_by(user: current_user, gist: gist) %>
+      <%= link_to bookmark_path(bookmark), method: :delete, class: 'link' do %>
+        <i class="zmdi zmdi-link tooltip">
+          <span class="tooltiptext">إزالة من المفضلة</span>
+        </i>
+      <% end %>
+    <% else %>
+      <%= link_to bookmarks_path(gist_id: gist.id), method: :post, class: 'link' do %>
+        <i class="zmdi zmdi-link tooltip">
+          <span class="tooltiptext">إضافة إلى المفضلة</span>
+        </i>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="coder-link">

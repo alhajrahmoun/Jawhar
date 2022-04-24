@@ -11,6 +11,7 @@
 <% else %>
 		<li><%= link_to "جوهري", gists_path %></li>
 		<li><%= link_to "اكتشف", explore_gists_path %></li>
+		<li><%= link_to "المفضلة", bookmarks_path %></li>
 		<li><%= link_to "إضافة جوهر جديد", new_gist_path %></li>
 		<% notification_count = current_user.unread_notifications_count %>
 		<% if notification_count.zero? %>
