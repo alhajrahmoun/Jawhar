@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       get :make_as_read
     end
   end
+  resources :bookmarks, only: [:index, :create, :destroy]
   resources :tags, only: [:index, :show]
   resources :comments, only: [:create]
   resources :contacts, only: [:new, :create]

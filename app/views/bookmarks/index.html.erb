@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6.col-md-offset-3">
+      <ul class="notification-index-list">
+        <% unless @bookmarks.empty? %>
+          <% @bookmarks.each do |bookmark|%>
+            <li><%= link_to bookmark.gist.title, gist_path(bookmark.gist) %> | <%= link_to 'حذف', bookmark_path(bookmark), method: :delete %></li>
+          <% end %>
+        <% else %>
+          <div class="container">
+            <div class="row">
+              <div class="col l6 pull-l4 s12">
+                <h4>لاتوجد جواهر مفضلة!</h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
